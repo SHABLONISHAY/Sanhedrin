@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="ראשי">
@@ -11,13 +12,13 @@ import Layout from '../layouts/Layout.astro';
         <p class="text-blue-200 text-lg max-w-xl leading-relaxed">
           לשיקום מוסדות ישראל על יסוד התורה — חידוש הסנהדרין בדורנו
         </p>
-        <a href="/articles" class="inline-block mt-5 bg-white text-[#003f87] font-semibold px-6 py-2.5 rounded hover:bg-blue-50 transition-colors text-sm">
+        <a href={`${base}articles`} class="inline-block mt-5 bg-white text-[#003f87] font-semibold px-6 py-2.5 rounded hover:bg-blue-50 transition-colors text-sm">
           רבנים ותומכים ◀
         </a>
       </div>
       <div class="shrink-0">
         <img
-          src="/images/39adaf0c6f913e19ba81a7ad56d7af05.jpg"
+          src={`${base}images/39adaf0c6f913e19ba81a7ad56d7af05.jpg`}
           alt="רבני הסנהדרין"
           class="w-72 h-auto rounded-lg shadow-lg border-2 border-blue-300"
         />
@@ -41,7 +42,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="grid md:grid-cols-2 gap-6">
       <div class="bg-white rounded-lg border border-[#dde3ed] overflow-hidden shadow-sm">
         <img
-          src="/images/13b5d640cee1b2a4fcb4e5c840e116cb.jpg"
+          src={`${base}images/13b5d640cee1b2a4fcb4e5c840e116cb.jpg`}
           alt="מעמד חידוש הסנהדרין בטבריה"
           class="w-full h-44 object-cover"
         />
@@ -52,7 +53,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="bg-white rounded-lg border border-[#dde3ed] overflow-hidden shadow-sm">
         <img
-          src="/images/4d34dcb67b7bbeee6c93cd06c1b34a6c.jpg"
+          src={`${base}images/4d34dcb67b7bbeee6c93cd06c1b34a6c.jpg`}
           alt="טבריה — עיר חידוש הסנהדרין"
           class="w-full h-44 object-cover"
         />
@@ -69,22 +70,22 @@ import Layout from '../layouts/Layout.astro';
       <ul class="space-y-2 text-gray-700">
         <li class="flex items-start gap-2">
           <span class="text-[#003f87] mt-1">◀</span>
-          <a href="/articles#maazuz" class="hover:text-[#003f87] hover:underline">הרה"ג מאיר מאזוז זצ"ל</a>
+          <a href={`${base}articles#maazuz`} class="hover:text-[#003f87] hover:underline">הרה"ג מאיר מאזוז זצ"ל</a>
         </li>
         <li class="flex items-start gap-2">
           <span class="text-[#003f87] mt-1">◀</span>
-          <a href="/articles#sabato" class="hover:text-[#003f87] hover:underline">הרה"ג שבתי הכהן סבתו שליט"א</a>
+          <a href={`${base}articles#sabato`} class="hover:text-[#003f87] hover:underline">הרה"ג שבתי הכהן סבתו שליט"א</a>
         </li>
         <li class="flex items-start gap-2">
           <span class="text-[#003f87] mt-1">◀</span>
-          <a href="/articles#kook" class="hover:text-[#003f87] hover:underline">הרה"ג הראי"ה קוק זצ"ל</a>
+          <a href={`${base}articles#kook`} class="hover:text-[#003f87] hover:underline">הרה"ג הראי"ה קוק זצ"ל</a>
         </li>
         <li class="flex items-start gap-2">
           <span class="text-[#003f87] mt-1">◀</span>
-          <a href="/articles#steinsaltz" class="hover:text-[#003f87] hover:underline">הרה"ג עדין אבן ישראל שטיינזלץ זצ"ל</a>
+          <a href={`${base}articles#steinsaltz`} class="hover:text-[#003f87] hover:underline">הרה"ג עדין אבן ישראל שטיינזלץ זצ"ל</a>
         </li>
       </ul>
-      <a href="/articles" class="inline-block mt-4 text-sm text-[#003f87] font-medium hover:underline">
+      <a href={`${base}articles`} class="inline-block mt-4 text-sm text-[#003f87] font-medium hover:underline">
         למאמרים נוספים ולרבנים נוספים התומכים ◀
       </a>
     </div>
@@ -99,7 +100,7 @@ import Layout from '../layouts/Layout.astro';
         <strong>הלכה א</strong> — שלש מצות נצטוו ישראל בשעת כניסתן לארץ: למנות להם מלך שנאמר "שום תשים עליך מלך", ולהכרית זרעו של עמלק, ולבנות בית הבחירה שנאמר "לשכנו תדרשו ובאת שמה".
         <footer class="mt-2 text-[#003f87] font-medium">משנה תורה לרמב"ם · הלכות מלכים ומלחמות · פרק ראשון</footer>
       </blockquote>
-      <a href="/relevance" class="inline-block mt-2 text-sm text-[#003f87] font-medium hover:underline">להמשך הרקע ההלכתי ◀</a>
+      <a href={`${base}relevance`} class="inline-block mt-2 text-sm text-[#003f87] font-medium hover:underline">להמשך הרקע ההלכתי ◀</a>
     </div>
 
     <!-- Historical background -->
@@ -111,7 +112,7 @@ import Layout from '../layouts/Layout.astro';
       <p class="text-gray-700 leading-relaxed">
         בתלמוד הבבלי, פירט רבי יוחנן מהן התכונות הנדרשות מחברי הסנהדרין: "אין מושיבים בסנהדרין אלא בעלי חכמה, בעלי מראה, בעלי קומה, בעלי זקנה..."
       </p>
-      <a href="/sanhedrin" class="inline-block mt-3 text-sm text-[#003f87] font-medium hover:underline">על הסנהדרין ומשמעה ◀</a>
+      <a href={`${base}sanhedrin`} class="inline-block mt-3 text-sm text-[#003f87] font-medium hover:underline">על הסנהדרין ומשמעה ◀</a>
     </div>
 
   </div>

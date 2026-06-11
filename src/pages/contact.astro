@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="צור קשר">
@@ -57,16 +58,16 @@ import Layout from '../layouts/Layout.astro';
       <h2 class="text-lg font-semibold text-[#003f87] mb-4">עקבו אחרינו</h2>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <a href="https://wa.me/972543987273" target="_blank" rel="noopener" class="flex flex-col items-center gap-2 hover:opacity-90 transition-opacity">
-          <img src="/images/8b006ce606b79912f8dd6b68ec155222.jpg" alt="WhatsApp לפניות" class="w-full rounded-lg shadow-sm" />
+          <img src={`${base}images/8b006ce606b79912f8dd6b68ec155222.jpg`} alt="WhatsApp לפניות" class="w-full rounded-lg shadow-sm" />
         </a>
         <a href="https://wa.me/972543987273" target="_blank" rel="noopener" class="flex flex-col items-center gap-2 hover:opacity-90 transition-opacity">
-          <img src="/images/85b6040905308ba0e0e6654810061b20.jpg" alt="קבוצת WhatsApp לעדכונים" class="w-full rounded-lg shadow-sm" />
+          <img src={`${base}images/85b6040905308ba0e0e6654810061b20.jpg`} alt="קבוצת WhatsApp לעדכונים" class="w-full rounded-lg shadow-sm" />
         </a>
         <a href="https://www.facebook.com" target="_blank" rel="noopener" class="flex flex-col items-center gap-2 hover:opacity-90 transition-opacity">
-          <img src="/images/eec8ad3f1143a8f3b1864a9bc7dac4d4.jpg" alt="פייסבוק" class="w-full rounded-lg shadow-sm" />
+          <img src={`${base}images/eec8ad3f1143a8f3b1864a9bc7dac4d4.jpg`} alt="פייסבוק" class="w-full rounded-lg shadow-sm" />
         </a>
         <a href="https://paypal.me" target="_blank" rel="noopener" class="flex flex-col items-center gap-2 hover:opacity-90 transition-opacity">
-          <img src="/images/798c87861c0a994418ca69418a491c65.jpg" alt="תרומה דרך PayPal" class="w-full rounded-lg shadow-sm" />
+          <img src={`${base}images/798c87861c0a994418ca69418a491c65.jpg`} alt="תרומה דרך PayPal" class="w-full rounded-lg shadow-sm" />
         </a>
       </div>
     </div>

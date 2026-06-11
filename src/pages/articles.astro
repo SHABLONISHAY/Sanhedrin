@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 
 const rabbis = [
   {
@@ -7,28 +8,28 @@ const rabbis = [
     name: 'הרה"ג דניאל הכהן סטבסקי שליט"א',
     role: 'רב ומורה הוראה של קהילה בחסידות ביאלא בבית שמש, מקובל וראש בית הבעל שם טוב.',
     stance: 'תומך ופעיל בחידוש הסנהדרין.',
-    photo: '/images/rabbis/rabbi-stavsky.jpg',
+    photo: base + 'images/rabbis/rabbi-stavsky.jpg',
   },
   {
     id: 'sabato',
     name: 'הרה"ג שבתי סבתו הכהן שליט"א',
     role: `ראש הישיבה התיכונית "נתיבות יוסף", נשיא הישיבה הגבוהה "מאור טוביה" שבמצפה יריחו, נשיא הישיבה התיכונית "מצפה רחובות" שברחובות ורב בית הכנסת "היכל גבריאל" ביישוב בית אל. מייסד מיזם "התלמוד המוקלט".`,
     stance: 'מעודד וקורא לחידוש הסנהדרין בדורנו.',
-    photo: '/images/rabbis/rabbi-sabato.jpg',
+    photo: base + 'images/rabbis/rabbi-sabato.jpg',
   },
   {
     id: 'eliyahu',
     name: 'הרה"ג שמואל אליהו שליט"א',
     role: 'רב העיר צפת ובנו של הראשל"צ הרה"ג מרדכי אליהו. נסמך ע"י בית הדין של הסנהדרין.',
     stance: 'תומך בקידום וחיזוק מוסד הסנהדרין.',
-    photo: '/images/rabbis/rabbi-eliyahu.jpg',
+    photo: base + 'images/rabbis/rabbi-eliyahu.jpg',
   },
   {
     id: 'kook',
     name: 'הרה"ג אברהם יצחק הכהן קוק זצ"ל',
     role: 'הרב הראשי הראשון לארץ ישראל.',
     stance: `בשנת תרנ"ח כתב מאמר "על הציונות" שבו תמך בנלהבות ברעיון חידוש הסנהדרין. מאוחר יותר ניסה להקים סנהדרין, ואף הרכיב את מועצת הרבנות הראשית מ-23 חכמים כנגד סנהדרי קטנה.`,
-    photo: '/images/rabbis/rabbi-kook.jpg',
+    photo: base + 'images/rabbis/rabbi-kook.jpg',
     expandLabel: 'לקריאת ציטוט מלא מדברי הרב קוק',
     expandContent: [
       `<span class="text-xs text-gray-500 block mb-2">ממאמר "על הציונות", תרנ"ח (אוצרות הראי"ה עמ' 928 ואילך):</span>`,
@@ -46,7 +47,7 @@ const rabbis = [
     name: 'הרה"ג אורי שרקי שליט"א',
     role: 'רב ומרצה ידוע.',
     stance: 'תומך ביוזמת חידוש הסנהדרין.',
-    photo: '/images/rabbis/rabbi-sharki.jpg',
+    photo: base + 'images/rabbis/rabbi-sharki.jpg',
     expandLabel: 'לקריאת דברי הרב שרקי על חידוש הסנהדרין',
     expandContent: [
       `<strong class="text-[#003f87]">חידוש הסנהדרין בימינו</strong>`,
@@ -61,14 +62,14 @@ const rabbis = [
     name: 'הרה"ג צבי עידאן שליט"א',
     role: 'אב"ד ורב שכונת מעלות דפנה, מבכירי תלמידי הגאון הרב בן ציון אבא שאול זצ"ל. חיבר ספרים רבים.',
     stance: 'עומד בראש מחדשי הסנהדרין בדורנו.',
-    photo: '/images/rabbis/rabbi-idan.jpg',
+    photo: base + 'images/rabbis/rabbi-idan.jpg',
   },
   {
     id: 'maazuz',
     name: 'הרה"ג מאיר מאזוז זצ"ל',
     role: 'גאון ופוסק מרכזי בעדות המזרח.',
     stance: 'לקח חלק פעיל במעמד חידוש הסנהדרין בטבריה (תשס"ה).',
-    photo: '/images/rabbis/rabbi-maazuz.jpg',
+    photo: base + 'images/rabbis/rabbi-maazuz.jpg',
     expandLabel: 'לפרטים על מעמד חידוש הסנהדרין בטבריה',
     expandContent: [
       `בשנת תשס"ה נערך כנס גדול בטבריה לחידוש הסנהדרין. בכנס היו שבעים ואחד חכמים כפי שמושב הסנהדרין צריך להיות, ועימם עוד עשרות רבנים שבאו לתמוך בהחזרת הסנהדרין.`,
@@ -82,14 +83,14 @@ const rabbis = [
     name: 'הרה"ג דב מאיר שטיין זצ"ל',
     role: `אב"ד 'מחזיקי תורה', היה קצין בדימוס, רב חטיבת שריון, מומחה בתחומי סטטיסטיקה כלכלה ומחשבים.`,
     stance: 'היה מיוזמי חידוש הסנהדרין בדורנו. שימש כמזכיר הסנהדרין.',
-    photo: '/images/rabbis/rabbi-stein.jpg',
+    photo: base + 'images/rabbis/rabbi-stein.jpg',
   },
   {
     id: 'steinsaltz',
     name: 'הרה"ג עדין אבן ישראל שטיינזלץ זצ"ל',
     role: 'מחבר ספרי הגות יהודית וביאורים לתלמוד. חתן פרס ישראל למדעי היהדות (1988). שימש בראש הסנהדרין.',
     stance: `"לא פלא שהדברים הללו מפחידים אנשים... נעשה דברים בראייה של דורות, לא עם שעון עצר. הייתי שמח אם בעוד כמה שנים הכיסאות ייתפסו על ידי גדולים מאיתנו, ואנו נוכל להגיד: חיממנו לכם את הכיסאות."`,
-    photo: '/images/rabbis/rabbi-steinsaltz.jpg',
+    photo: base + 'images/rabbis/rabbi-steinsaltz.jpg',
     expandLabel: 'לביוגרפיה ודברים נוספים',
     expandContent: [
       `הרב עדין אבן ישראל (מוכר בשם משפחתו הישן שטיינזַלץ; ג' באב ה'תרצ"ז, 11 ביולי 1937 – י"ז באב ה'תש"ף, 7 באוגוסט 2020) היה מחבר ספרי הגות יהודית וביאורים, בפרט לתלמוד ולחסידות. נודע בעיקר בשל פירושו לתלמוד והיותו בעל ידע רחב בתחומי דעת שונים. רב בית הכנסת צמח צדק בירושלים, חתן פרס ישראל למדעי היהדות לשנת 1988, עיטור נשיא מדינת ישראל לשנת 2012 ויקיר ירושלים לשנת 2017. שימש כנשיא הישיבות התיכוניות מקור חיים ושפע מקור חיים וכן כנשיא ישיבת תקוע. השתייך לחסידות חב"ד.`,
@@ -104,7 +105,7 @@ const rabbis = [
     name: 'הרה"ג דב יהודה רובין שליט"א',
     role: 'רב ומורה הוראה, תומך ביוזמת חידוש הסנהדרין.',
     stance: 'תומך ופעיל בחידוש הסנהדרין בדורנו.',
-    photo: '/images/rabbis/rabbi-rubin.jpg',
+    photo: base + 'images/rabbis/rabbi-rubin.jpg',
     expandLabel: 'לדברי הרב רובין על הרבנות הראשית והסנהדרין',
     expandContent: [
       `<strong class="text-[#003f87]">הרבנות הראשית לא יכולה להיות הגוף שיצמיח את הסנהדרין!</strong>`,
@@ -119,7 +120,7 @@ const rabbis = [
     name: 'הרה"ג יהודה לייב הכהן פישמן מימון זצ"ל',
     role: 'מחבר הספר "חידוש הסנהדרין".',
     stance: 'רצה להקים את הסנהדרין ואף כתב ספר מפורט בנושא.',
-    photo: '/images/rabbis/rabbi-maimon.jpg',
+    photo: base + 'images/rabbis/rabbi-maimon.jpg',
     expandLabel: 'לפרטים נוספים על הרב מימון',
     expandContent: [
       `הרב יהודה לייב הכהן פישמן מימון היה ממקימי תנועת המזרחי, חבר מנהלת העם, מחותמי מגילת העצמאות, שר הדתות הראשון של מדינת ישראל וחתן פרס ישראל לספרות תורנית.`,
@@ -133,7 +134,7 @@ const rabbis = [
     name: 'הרה"ג ישראל אריאל שליט"א',
     role: 'ראש מכון המקדש וראש ישיבת המקדש בעיר העתיקה בירושלים. מבכירי תלמידי הרב צבי יהודה ראש ישיבת מרכז הרב.',
     stance: 'פעיל ביוזמת חידוש הסנהדרין. כתב ספר יסודי בנושא הסנהדרין.',
-    photo: '/images/rabbis/rabbi-ariel.jpg',
+    photo: base + 'images/rabbis/rabbi-ariel.jpg',
     expandLabel: 'לקריאת מאמר הרב אריאל: חידוש הסנהדרין בדורנו',
     expandContent: [
       `<strong class="block text-[#003f87] text-base">חידוש הסנהדרין בדורנו — שאלה הלכתית או רגשית?</strong>`,
@@ -233,7 +234,7 @@ const rabbis = [
       <p class="text-blue-200 leading-relaxed">
         ניתן לראות תלמידי חכמים מזרמים שונים: ספרדים, אשכנזים, חרדים, כיפות סרוגות וחסידים היושבים יחדיו, מכבדים זה את זה ופועלים במשותף לחידוש וכינון הסנהדרין.
       </p>
-      <a href="/contact" class="inline-block mt-4 bg-white text-[#003f87] font-semibold px-6 py-2.5 rounded hover:bg-blue-50 transition-colors text-sm">
+      <a href={`${base}contact`} class="inline-block mt-4 bg-white text-[#003f87] font-semibold px-6 py-2.5 rounded hover:bg-blue-50 transition-colors text-sm">
         הצטרפו אלינו
       </a>
     </div>

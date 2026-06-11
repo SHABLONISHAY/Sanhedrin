@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Letter to the British People">
@@ -34,7 +35,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="flex gap-2" dir="ltr">
           <a
-            href="/pdfs/letter-british-people.pdf"
+            href={`${base}pdfs/letter-british-people.pdf`}
             target="_blank"
             rel="noopener"
             class="shrink-0 text-xs text-white bg-[#003f87] rounded px-3 py-1.5 hover:bg-[#0057b8] transition-colors"
@@ -42,7 +43,7 @@ import Layout from '../layouts/Layout.astro';
             Open in new tab ↗
           </a>
           <a
-            href="/pdfs/letter-british-people.pdf"
+            href={`${base}pdfs/letter-british-people.pdf`}
             download
             class="shrink-0 text-xs text-[#003f87] border border-[#003f87] rounded px-3 py-1.5 hover:bg-[#003f87] hover:text-white transition-colors"
           >
@@ -55,7 +56,7 @@ import Layout from '../layouts/Layout.astro';
           If the document does not load below, click "Open in new tab ↗" above to read it in your browser.
         </p>
         <iframe
-          src="/pdfs/letter-british-people.pdf"
+          src={`${base}pdfs/letter-british-people.pdf`}
           class="w-full border-0"
           style="height: 720px;"
           title="Letter to the British People – Sanhedrin"

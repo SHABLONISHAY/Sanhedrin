@@ -1,32 +1,37 @@
 ---
+const base = import.meta.env.BASE_URL; // '/astro-test/' in prod, '/' in dev
+
 const mainLinks = [
-  { href: '/', label: 'ראשי' },
-  { href: '/faq', label: 'שאלות נפוצות' },
-  { href: '/articles', label: 'מאמרים ותומכים' },
-  { href: '/sanhedrin', label: 'הסנהדרין ומשמעה' },
-  { href: '/rulings', label: 'פסיקות' },
-  { href: '/about', label: 'אודות' },
-  { href: '/contact', label: 'צור קשר' },
+  { href: base,                   label: 'ראשי' },
+  { href: `${base}faq`,           label: 'שאלות נפוצות' },
+  { href: `${base}articles`,      label: 'מאמרים ותומכים' },
+  { href: `${base}sanhedrin`,     label: 'הסנהדרין ומשמעה' },
+  { href: `${base}rulings`,       label: 'פסיקות' },
+  { href: `${base}about`,         label: 'אודות' },
+  { href: `${base}contact`,       label: 'צור קשר' },
 ];
 
 const moreLinks = [
-  { href: '/relevance', label: 'רלוונטיות להיום' },
-  { href: '/renewal', label: 'חידוש הסמיכה' },
-  { href: '/courts', label: 'הקמת ב"ד בכל עיר' },
-  { href: '/laugh', label: 'צוחק מי שצוחק אחרון!' },
-  { href: '/weekly', label: 'חשיבות הסנהדרין על פרשות השבוע' },
-  { href: '/letter', label: 'Letter to the British People' },
+  { href: `${base}relevance`,     label: 'רלוונטיות להיום' },
+  { href: `${base}renewal`,       label: 'חידוש הסמיכה' },
+  { href: `${base}courts`,        label: 'הקמת ב"ד בכל עיר' },
+  { href: `${base}laugh`,         label: 'צוחק מי שצוחק אחרון!' },
+  { href: `${base}weekly`,        label: 'חשיבות הסנהדרין על פרשות השבוע' },
+  { href: `${base}letter`,        label: 'Letter to the British People' },
 ];
 
-const currentPath = Astro.url.pathname;
-const isMoreActive = moreLinks.some(l => l.href === currentPath);
+// Normalize path for active-state comparison (strip trailing slash)
+const norm = (p: string) => p.endsWith('/') && p.length > 1 ? p.slice(0, -1) : p;
+const currentPath = norm(Astro.url.pathname);
+const isActive = (href: string) => norm(href) === currentPath;
+const isMoreActive = moreLinks.some(l => isActive(l.href));
 ---
 
 <header class="bg-white shadow-sm border-t-4 border-t-[#003f87] sticky top-0 z-50">
   <nav class="max-w-7xl mx-auto px-4 flex items-center justify-between h-14">
-    <a href="/" class="shrink-0 flex items-center">
+    <a href={base} class="shrink-0 flex items-center">
       <img
-        src="/images/a9aaac00894460c500a267eba47c2d1b.jpg"
+        src={`${base}images/a9aaac00894460c500a267eba47c2d1b.jpg`}
         alt="סנהדרין לישראל"
         class="h-9 w-auto"
       />
@@ -38,7 +43,7 @@ const isMoreActive = moreLinks.some(l => l.href === currentPath);
           <a
             href={link.href}
             class={`px-3 py-2 rounded text-sm font-medium transition-colors whitespace-nowrap
-              ${currentPath === link.href
+              ${isActive(link.href)
                 ? 'text-[#003f87] bg-[#e8f0fb] font-semibold'
                 : 'text-gray-700 hover:bg-[#f0f4ff] hover:text-[#003f87]'
               }`}
@@ -70,7 +75,7 @@ const isMoreActive = moreLinks.some(l => l.href === currentPath);
               <a
                 href={link.href}
                 class={`block px-4 py-2 text-sm rounded transition-colors
-                  ${currentPath === link.href
+                  ${isActive(link.href)
                     ? 'text-[#003f87] bg-[#e8f0fb] font-semibold'
                     : 'text-gray-700 hover:bg-[#f0f4ff] hover:text-[#003f87]'
                   }`}

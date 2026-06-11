@@ -1,23 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 
 const rulings = [
   {
     title: 'החלטת והכרזת בית הדין בנושא חזרת החטופים',
     date: 'ה\' במרחשוון ה\'תשפ"ו',
-    file: '/pdfs/ruling-hostages.pdf',
+    file: base + 'pdfs/ruling-hostages.pdf',
     type: 'פסיקה',
   },
   {
     title: 'הצעת הסנהדרין לחוק הנוער לגבי הוצאת ילדים ממשפחותיהם',
     date: 'ז\' באייר ה\'תשפ"ה',
-    file: '/pdfs/proposal-youth-law.pdf',
+    file: base + 'pdfs/proposal-youth-law.pdf',
     type: 'הצעה',
   },
   {
     title: 'פסיקת בית הדין בנושא: יום אהרן הכהן',
     date: '',
-    file: '/pdfs/ruling-aharon-cohen.pdf',
+    file: base + 'pdfs/ruling-aharon-cohen.pdf',
     type: 'פסיקה',
   },
 ];
@@ -26,27 +27,27 @@ const letters = [
   {
     title: 'לאחינו בני ישראל',
     desc: 'קריאה לאחדות ולחידוש הסנהדרין בדורנו',
-    file: '/pdfs/letter-to-jewish-people.pdf',
+    file: base + 'pdfs/letter-to-jewish-people.pdf',
   },
   {
     title: 'מכתב למנהיגי ישראל',
     desc: 'פנייה לנבחרי הציבור ומנהיגי המדינה',
-    file: '/pdfs/letter-israeli-leaders.pdf',
+    file: base + 'pdfs/letter-israeli-leaders.pdf',
   },
   {
     title: 'מכתב לפרסיים',
     desc: 'מסר לאחיהם בפרס על הסנהדרין',
-    file: '/pdfs/letter-persians.pdf',
+    file: base + 'pdfs/letter-persians.pdf',
   },
   {
     title: 'קריאה למוסלמים',
     desc: 'קריאה לבני שם לשמור שבע מצוות בני נוח',
-    file: '/pdfs/letter-muslims.pdf',
+    file: base + 'pdfs/letter-muslims.pdf',
   },
   {
     title: 'Letter to the British People',
     desc: 'A call to the British public regarding the Sanhedrin',
-    file: '/pdfs/letter-british-people.pdf',
+    file: base + 'pdfs/letter-british-people.pdf',
   },
 ];
 ---
@@ -59,7 +60,7 @@ const letters = [
     <!-- Beit din session photo -->
     <div class="mb-8 rounded-lg overflow-hidden border border-[#dde3ed] shadow-sm">
       <img
-        src="/images/d21c095dccd1b52e4fe3d015edd7d7cd.jpg"
+        src={`${base}images/d21c095dccd1b52e4fe3d015edd7d7cd.jpg`}
         alt="ישיבת בית הדין של הסנהדרין"
         class="w-full h-52 object-cover object-top"
       />
@@ -181,7 +182,7 @@ const letters = [
     <div class="bg-[#e8f0fb] rounded-lg border border-[#c5d5f0] p-6 text-center">
       <p class="text-[#003f87] font-medium">לדברי תורה ועדכונים נוספים</p>
       <p class="text-gray-600 text-sm mt-1">עקבו אחרינו בוואטסאפ ובפייסבוק</p>
-      <a href="/contact" class="inline-block mt-3 bg-[#003f87] text-white font-medium px-6 py-2 rounded hover:bg-[#0057b8] transition-colors text-sm">
+      <a href={`${base}contact`} class="inline-block mt-3 bg-[#003f87] text-white font-medium px-6 py-2 rounded hover:bg-[#0057b8] transition-colors text-sm">
         צרו קשר
       </a>
     </div>
