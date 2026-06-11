@@ -1,0 +1,134 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="צור קשר">
+  <div class="max-w-3xl mx-auto px-6 py-10">
+    <h1 class="text-3xl font-bold text-[#003f87] mb-2">צור קשר</h1>
+    <div class="w-16 h-1 bg-[#003f87] mb-8"></div>
+
+    <!-- Contact info -->
+    <div class="bg-white rounded-lg border border-[#dde3ed] p-8 shadow-sm mb-6">
+      <p class="text-gray-700 mb-6 leading-relaxed">
+        אם התחברת לחשיבות העניין וברצונך לסייע ככל יכולתך, להלן דרכי הסיוע:
+      </p>
+
+      <ul class="space-y-3 mb-6">
+        {[
+          'פעילות הפצה ברשת',
+          'חיבור קהלים ורבנים',
+          'השתתפות בימי עיון וכנסים',
+          'רישום במאגר התומכים',
+          'סיוע בתרומה לקידום העניין (ניתן לתת ממעשר כספים)',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-gray-700">
+            <span class="text-[#003f87] font-bold mt-0.5">◀</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+
+      <div class="grid md:grid-cols-2 gap-4 border-t border-[#dde3ed] pt-6">
+        <div class="bg-[#f5f8ff] rounded-lg p-4">
+          <p class="text-xs text-gray-500 mb-1 font-medium">דואר אלקטרוני</p>
+          <a href="mailto:sanhedrin.leisrael@gmail.com" class="text-[#003f87] font-medium hover:underline text-sm" dir="ltr">
+            sanhedrin.leisrael@gmail.com
+          </a>
+        </div>
+        <div class="bg-[#f5f8ff] rounded-lg p-4">
+          <p class="text-xs text-gray-500 mb-1 font-medium">טלפון</p>
+          <a href="tel:0543987273" class="text-[#003f87] font-medium hover:underline text-sm" dir="ltr">
+            054-398-7273
+          </a>
+        </div>
+        <div class="bg-[#f5f8ff] rounded-lg p-4">
+          <p class="text-xs text-gray-500 mb-1 font-medium">ביט</p>
+          <p class="text-gray-700 text-sm" dir="ltr">0543987273</p>
+        </div>
+        <div class="bg-[#f5f8ff] rounded-lg p-4">
+          <p class="text-xs text-gray-500 mb-1 font-medium">תרומה מאובטחת</p>
+          <p class="text-gray-700 text-sm">פייפאל / ביט</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social / CTA buttons -->
+    <div class="bg-white rounded-lg border border-[#dde3ed] p-6 shadow-sm mb-6">
+      <h2 class="text-lg font-semibold text-[#003f87] mb-4">עקבו אחרינו</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="https://wa.me/972543987273" target="_blank" rel="noopener" class="flex flex-col items-center gap-2 hover:opacity-90 transition-opacity">
+          <img src="/images/8b006ce606b79912f8dd6b68ec155222.jpg" alt="WhatsApp לפניות" class="w-full rounded-lg shadow-sm" />
+        </a>
+        <a href="https://wa.me/972543987273" target="_blank" rel="noopener" class="flex flex-col items-center gap-2 hover:opacity-90 transition-opacity">
+          <img src="/images/85b6040905308ba0e0e6654810061b20.jpg" alt="קבוצת WhatsApp לעדכונים" class="w-full rounded-lg shadow-sm" />
+        </a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener" class="flex flex-col items-center gap-2 hover:opacity-90 transition-opacity">
+          <img src="/images/eec8ad3f1143a8f3b1864a9bc7dac4d4.jpg" alt="פייסבוק" class="w-full rounded-lg shadow-sm" />
+        </a>
+        <a href="https://paypal.me" target="_blank" rel="noopener" class="flex flex-col items-center gap-2 hover:opacity-90 transition-opacity">
+          <img src="/images/798c87861c0a994418ca69418a491c65.jpg" alt="תרומה דרך PayPal" class="w-full rounded-lg shadow-sm" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Contact form -->
+    <div class="bg-white rounded-lg border border-[#dde3ed] p-8 shadow-sm">
+      <h2 class="text-lg font-semibold text-[#003f87] mb-6">שלח הודעה</h2>
+      <form class="space-y-5" method="post">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">שם מלא</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="w-full border border-[#dde3ed] rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-[#003f87] focus:ring-1 focus:ring-[#003f87]"
+            placeholder="הכנס שם מלא"
+          />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">דואר אלקטרוני</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="w-full border border-[#dde3ed] rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-[#003f87] focus:ring-1 focus:ring-[#003f87]"
+            placeholder="example@mail.com"
+            dir="ltr"
+          />
+        </div>
+        <div>
+          <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">נושא (נא לפרט)</label>
+          <select
+            id="subject"
+            name="subject"
+            class="w-full border border-[#dde3ed] rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-[#003f87] focus:ring-1 focus:ring-[#003f87] bg-white"
+          >
+            <option value="">בחר נושא...</option>
+            <option>פעילות הפצה ברשת</option>
+            <option>חיבור קהלים ורבנים</option>
+            <option>השתתפות בכנסים</option>
+            <option>רישום במאגר התומכים</option>
+            <option>תרומה</option>
+            <option>אחר</option>
+          </select>
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium text-gray-700 mb-1">הודעה</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            class="w-full border border-[#dde3ed] rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-[#003f87] focus:ring-1 focus:ring-[#003f87] resize-none"
+            placeholder="כתוב את הודעתך כאן..."
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="bg-[#003f87] text-white font-medium px-8 py-2.5 rounded-md hover:bg-[#0057b8] transition-colors text-sm"
+        >
+          שלח הודעה
+        </button>
+      </form>
+    </div>
+  </div>
+</Layout>

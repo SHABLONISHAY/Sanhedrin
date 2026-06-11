@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Letter to the British People">
+  <div class="max-w-4xl mx-auto px-6 py-10">
+    <h1 class="text-3xl font-bold text-[#003f87] mb-2">Letter to the British People</h1>
+    <div class="w-16 h-1 bg-[#003f87] mb-8"></div>
+
+    <div class="bg-white rounded-lg border border-[#dde3ed] p-8 shadow-sm mb-6" dir="ltr">
+      <p class="text-gray-700 leading-relaxed mb-4">
+        The Sanhedrin of Israel is the supreme halakhic (Jewish law) body of the Jewish people. Its role extends to establishing principles of justice and law, not only within the Jewish people, but throughout the entire world among all nations.
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        The Sanhedrin was abolished during the Roman era due to persecution of its scholars and their execution by the Romans. The Romans understood that eliminating the spiritual leadership would make it very difficult for the Jewish people to exist as a unified entity.
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        The Rambam (Maimonides) established a framework for its renewal in the Laws of the Sanhedrin in his Mishneh Torah. This framework is two-staged: first, the renewal of ordination (Semicha), and in the second stage, the renewal of the Sanhedrin.
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        In the year 5765 (2004–2005), a group of rabbis gathered to renew the Sanhedrin according to this framework. Seventy-one of the ordained gathered in Tiberias and renewed the Sanhedrin.
+      </p>
+      <p class="text-gray-700 leading-relaxed">
+        The renewed Sanhedrin is also the only rabbinic organization in the country that operates according to the basic criterion established by Maimonides: on a voluntary basis and without receiving payment for its members' activities.
+      </p>
+    </div>
+
+    <!-- Embedded PDF with viewer -->
+    <div class="bg-white rounded-lg border border-[#dde3ed] shadow-sm overflow-hidden mb-6">
+      <div class="p-5 flex items-center justify-between gap-4 flex-wrap">
+        <div class="flex items-center gap-3">
+          <span class="px-2 py-0.5 rounded text-xs font-semibold bg-[#e8f0fb] text-[#003f87]">PDF</span>
+          <h2 class="font-semibold text-[#003f87]" dir="ltr">Letter to the British People – Sanhedrin</h2>
+        </div>
+        <div class="flex gap-2" dir="ltr">
+          <a
+            href="/pdfs/letter-british-people.pdf"
+            target="_blank"
+            rel="noopener"
+            class="shrink-0 text-xs text-white bg-[#003f87] rounded px-3 py-1.5 hover:bg-[#0057b8] transition-colors"
+          >
+            Open in new tab ↗
+          </a>
+          <a
+            href="/pdfs/letter-british-people.pdf"
+            download
+            class="shrink-0 text-xs text-[#003f87] border border-[#003f87] rounded px-3 py-1.5 hover:bg-[#003f87] hover:text-white transition-colors"
+          >
+            Download
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-[#dde3ed] bg-gray-50">
+        <p class="text-xs text-gray-400 px-4 py-2">
+          If the document does not load below, click "Open in new tab ↗" above to read it in your browser.
+        </p>
+        <iframe
+          src="/pdfs/letter-british-people.pdf"
+          class="w-full border-0"
+          style="height: 720px;"
+          title="Letter to the British People – Sanhedrin"
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="mt-4 bg-[#e8f0fb] rounded-lg border border-[#c5d5f0] p-5" dir="ltr">
+      <p class="text-[#003f87] font-semibold mb-1">Contact us</p>
+      <p class="text-gray-700 text-sm">For inquiries: <a href="mailto:sanhedrin.leisrael@gmail.com" class="text-[#003f87] hover:underline">sanhedrin.leisrael@gmail.com</a></p>
+    </div>
+  </div>
+</Layout>

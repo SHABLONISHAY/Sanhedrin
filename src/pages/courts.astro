@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const members = [
+  { name: 'הרב גלעד חלא', role: 'ראש הישיבה הנבחר — ראש ישיבת ההסדר \'אורות משה\'' },
+  { name: 'הרב עמרם עטרי', role: 'ראש כולל \'נחלת ישורון\'' },
+  { name: 'הרב תומר חלא', role: 'ר"מ בישיבת ההסדר' },
+  { name: 'הרב שלמה תם', role: 'תלמיד חכם וסוכן ביטוח' },
+  { name: 'הרב שאול עשרי', role: 'רב בית כנסת' },
+  { name: 'הרב בושארי יאיר', role: 'ראש מוסדות \'אור זרוע\'' },
+  { name: 'הרב לוי צובארה', role: 'רב בית הכנסת \'נחלת עמרם\' ואברך ב\'נחלת ישורון\'' },
+  { name: 'הרב דויד עוזאני', role: 'רב בית הכנסת \'יריעות שלמה\' וראש כולל \'חסד אברהם\'' },
+];
+---
+
+<Layout title='הקמת ב"ד סנהדרין קטנה בכל עיר'>
+  <div class="max-w-4xl mx-auto px-6 py-10">
+    <h1 class="text-3xl font-bold text-[#003f87] mb-2">הקמת ב"ד סנהדרין קטנה בכל עיר</h1>
+    <div class="w-16 h-1 bg-[#003f87] mb-8"></div>
+
+    <div class="space-y-6">
+      <div class="bg-white rounded-lg border border-[#dde3ed] p-8 shadow-sm">
+        <p class="text-gray-700 leading-relaxed mb-4">
+          על פי ההלכה, כל עיר ביישראל שיש בה 120 איש ומעלה חייבת בהקמת בית דין של 23 דיינים. זהו חלק ממערך בתי הדין של עם ישראל.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          בלנ"ד ובעזרת ה' עד לסוף אב נשלים ל-23 סמוכין. כה ייתן ה' וכה יוסיף.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg border border-[#dde3ed] p-8 shadow-sm">
+        <h2 class="text-xl font-bold text-[#003f87] mb-6">חברי ב"ד</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          {members.map(m => (
+            <div class="bg-[#f5f8ff] rounded-lg p-4 border border-[#dde3ed]">
+              <p class="font-semibold text-[#003f87]">{m.name}</p>
+              <p class="text-gray-600 text-sm mt-1">{m.role}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="bg-[#e8f0fb] rounded-lg border border-[#c5d5f0] p-6">
+        <p class="text-[#003f87] font-semibold mb-2">רוצה להצטרף לב"ד בעירך?</p>
+        <p class="text-gray-700 text-sm mb-3">פנה אלינו לקבלת מידע על הקמת בית דין סנהדרין קטנה בעירך.</p>
+        <a href="/contact" class="inline-block bg-[#003f87] text-white font-medium px-6 py-2 rounded hover:bg-[#0057b8] transition-colors text-sm">
+          צרו קשר
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,86 @@
+---
+const mainLinks = [
+  { href: '/', label: 'ראשי' },
+  { href: '/faq', label: 'שאלות נפוצות' },
+  { href: '/articles', label: 'מאמרים ותומכים' },
+  { href: '/sanhedrin', label: 'הסנהדרין ומשמעה' },
+  { href: '/rulings', label: 'פסיקות' },
+  { href: '/about', label: 'אודות' },
+  { href: '/contact', label: 'צור קשר' },
+];
+
+const moreLinks = [
+  { href: '/relevance', label: 'רלוונטיות להיום' },
+  { href: '/renewal', label: 'חידוש הסמיכה' },
+  { href: '/courts', label: 'הקמת ב"ד בכל עיר' },
+  { href: '/laugh', label: 'צוחק מי שצוחק אחרון!' },
+  { href: '/weekly', label: 'חשיבות הסנהדרין על פרשות השבוע' },
+  { href: '/letter', label: 'Letter to the British People' },
+];
+
+const currentPath = Astro.url.pathname;
+const isMoreActive = moreLinks.some(l => l.href === currentPath);
+---
+
+<header class="bg-white shadow-sm border-t-4 border-t-[#003f87] sticky top-0 z-50">
+  <nav class="max-w-7xl mx-auto px-4 flex items-center justify-between h-14">
+    <a href="/" class="shrink-0 flex items-center">
+      <img
+        src="/images/a9aaac00894460c500a267eba47c2d1b.jpg"
+        alt="סנהדרין לישראל"
+        class="h-9 w-auto"
+      />
+    </a>
+
+    <ul class="flex gap-0.5 list-none m-0 p-0 overflow-x-auto">
+      {mainLinks.map(link => (
+        <li class="shrink-0">
+          <a
+            href={link.href}
+            class={`px-3 py-2 rounded text-sm font-medium transition-colors whitespace-nowrap
+              ${currentPath === link.href
+                ? 'text-[#003f87] bg-[#e8f0fb] font-semibold'
+                : 'text-gray-700 hover:bg-[#f0f4ff] hover:text-[#003f87]'
+              }`}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+
+      <!-- Dropdown: עוד -->
+      <li class="shrink-0 relative group">
+        <button
+          class={`px-3 py-2 rounded text-sm font-medium transition-colors whitespace-nowrap flex items-center gap-1
+            ${isMoreActive
+              ? 'text-[#003f87] bg-[#e8f0fb] font-semibold'
+              : 'text-gray-700 hover:bg-[#f0f4ff] hover:text-[#003f87]'
+            }`}
+        >
+          עוד
+          <svg class="w-3.5 h-3.5 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <ul class="absolute top-full end-0 bg-white border border-[#dde3ed] rounded-lg shadow-lg
+                   min-w-52 py-1 list-none m-0 p-1
+                   invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-150 z-50">
+          {moreLinks.map(link => (
+            <li>
+              <a
+                href={link.href}
+                class={`block px-4 py-2 text-sm rounded transition-colors
+                  ${currentPath === link.href
+                    ? 'text-[#003f87] bg-[#e8f0fb] font-semibold'
+                    : 'text-gray-700 hover:bg-[#f0f4ff] hover:text-[#003f87]'
+                  }`}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>

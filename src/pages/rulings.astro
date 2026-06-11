@@ -1,0 +1,211 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const rulings = [
+  {
+    title: 'החלטת והכרזת בית הדין בנושא חזרת החטופים',
+    date: 'ה\' במרחשוון ה\'תשפ"ו',
+    file: '/pdfs/ruling-hostages.pdf',
+    type: 'פסיקה',
+  },
+  {
+    title: 'הצעת הסנהדרין לחוק הנוער לגבי הוצאת ילדים ממשפחותיהם',
+    date: 'ז\' באייר ה\'תשפ"ה',
+    file: '/pdfs/proposal-youth-law.pdf',
+    type: 'הצעה',
+  },
+  {
+    title: 'פסיקת בית הדין בנושא: יום אהרן הכהן',
+    date: '',
+    file: '/pdfs/ruling-aharon-cohen.pdf',
+    type: 'פסיקה',
+  },
+];
+
+const letters = [
+  {
+    title: 'לאחינו בני ישראל',
+    desc: 'קריאה לאחדות ולחידוש הסנהדרין בדורנו',
+    file: '/pdfs/letter-to-jewish-people.pdf',
+  },
+  {
+    title: 'מכתב למנהיגי ישראל',
+    desc: 'פנייה לנבחרי הציבור ומנהיגי המדינה',
+    file: '/pdfs/letter-israeli-leaders.pdf',
+  },
+  {
+    title: 'מכתב לפרסיים',
+    desc: 'מסר לאחיהם בפרס על הסנהדרין',
+    file: '/pdfs/letter-persians.pdf',
+  },
+  {
+    title: 'קריאה למוסלמים',
+    desc: 'קריאה לבני שם לשמור שבע מצוות בני נוח',
+    file: '/pdfs/letter-muslims.pdf',
+  },
+  {
+    title: 'Letter to the British People',
+    desc: 'A call to the British public regarding the Sanhedrin',
+    file: '/pdfs/letter-british-people.pdf',
+  },
+];
+---
+
+<Layout title="פסיקות ומסמכים">
+  <div class="max-w-4xl mx-auto px-6 py-10">
+    <h1 class="text-3xl font-bold text-[#003f87] mb-2">פסיקות ומסמכים</h1>
+    <div class="w-16 h-1 bg-[#003f87] mb-6"></div>
+
+    <!-- Beit din session photo -->
+    <div class="mb-8 rounded-lg overflow-hidden border border-[#dde3ed] shadow-sm">
+      <img
+        src="/images/d21c095dccd1b52e4fe3d015edd7d7cd.jpg"
+        alt="ישיבת בית הדין של הסנהדרין"
+        class="w-full h-52 object-cover object-top"
+      />
+      <div class="px-5 py-3 bg-[#f5f8ff]">
+        <p class="text-sm text-[#003f87] font-medium">ישיבת בית הדין של הסנהדרין</p>
+      </div>
+    </div>
+
+    <!-- Rulings -->
+    <h2 class="text-xl font-bold text-[#003f87] mb-4">פסיקות בית הדין</h2>
+    <div class="space-y-4 mb-10">
+      {rulings.map(ruling => (
+        <div class="bg-white rounded-lg border border-[#dde3ed] shadow-sm overflow-hidden">
+          <div class="p-5 flex items-start gap-4 flex-wrap">
+            <span class="shrink-0 mt-0.5 px-2 py-0.5 rounded text-xs font-semibold bg-[#e8f0fb] text-[#003f87]">
+              {ruling.type}
+            </span>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-semibold text-[#003f87] leading-snug mb-0.5">{ruling.title}</h3>
+              {ruling.date && <p class="text-gray-500 text-xs">{ruling.date}</p>}
+            </div>
+            <div class="flex gap-2 shrink-0">
+              <a
+                href={ruling.file}
+                target="_blank"
+                rel="noopener"
+                class="text-xs text-white bg-[#003f87] rounded px-2.5 py-1 hover:bg-[#0057b8] transition-colors"
+              >
+                פתח ↗
+              </a>
+              <a
+                href={ruling.file}
+                download
+                class="text-xs text-[#003f87] border border-[#003f87] rounded px-2.5 py-1 hover:bg-[#003f87] hover:text-white transition-colors"
+              >
+                הורדה
+              </a>
+            </div>
+          </div>
+
+          <details class="border-t border-[#dde3ed]">
+            <summary class="px-5 py-3 text-sm text-[#003f87] font-medium cursor-pointer hover:bg-[#f5f8ff] list-none flex items-center gap-2 select-none">
+              <svg class="w-4 h-4 transition-transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+              צפייה במסמך
+            </summary>
+            <div class="border-t border-[#dde3ed] bg-gray-50 p-1">
+              <p class="text-xs text-gray-400 px-3 py-2">
+                אם המסמך לא נטען, לחץ "פתח ↗" בכפתורים לעיל לצפייה בלשונית חדשה.
+              </p>
+              <iframe
+                data-src={ruling.file}
+                class="w-full border-0 pdf-frame"
+                style="height: 700px;"
+                title={ruling.title}
+              ></iframe>
+            </div>
+          </details>
+        </div>
+      ))}
+    </div>
+
+    <!-- Letters -->
+    <h2 class="text-xl font-bold text-[#003f87] mb-4">מכתבים ומסמכים נוספים</h2>
+    <div class="space-y-4 mb-10">
+      {letters.map(letter => (
+        <div class="bg-white rounded-lg border border-[#dde3ed] shadow-sm overflow-hidden">
+          <div class="p-5 flex items-start gap-4 flex-wrap">
+            <span class="shrink-0 mt-0.5 px-2 py-0.5 rounded text-xs font-semibold bg-[#fff3e0] text-[#b45309]">
+              מכתב
+            </span>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-semibold text-[#003f87] leading-snug mb-0.5">{letter.title}</h3>
+              <p class="text-gray-500 text-xs">{letter.desc}</p>
+            </div>
+            <div class="flex gap-2 shrink-0">
+              <a
+                href={letter.file}
+                target="_blank"
+                rel="noopener"
+                class="text-xs text-white bg-[#003f87] rounded px-2.5 py-1 hover:bg-[#0057b8] transition-colors"
+              >
+                פתח ↗
+              </a>
+              <a
+                href={letter.file}
+                download
+                class="text-xs text-[#003f87] border border-[#003f87] rounded px-2.5 py-1 hover:bg-[#003f87] hover:text-white transition-colors"
+              >
+                הורדה
+              </a>
+            </div>
+          </div>
+
+          <details class="border-t border-[#dde3ed]">
+            <summary class="px-5 py-3 text-sm text-[#003f87] font-medium cursor-pointer hover:bg-[#f5f8ff] list-none flex items-center gap-2 select-none">
+              <svg class="w-4 h-4 transition-transform details-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+              צפייה במסמך
+            </summary>
+            <div class="border-t border-[#dde3ed] bg-gray-50 p-1">
+              <p class="text-xs text-gray-400 px-3 py-2">
+                אם המסמך לא נטען, לחץ "פתח ↗" בכפתורים לעיל לצפייה בלשונית חדשה.
+              </p>
+              <iframe
+                data-src={letter.file}
+                class="w-full border-0 pdf-frame"
+                style="height: 700px;"
+                title={letter.title}
+              ></iframe>
+            </div>
+          </details>
+        </div>
+      ))}
+    </div>
+
+    <div class="bg-[#e8f0fb] rounded-lg border border-[#c5d5f0] p-6 text-center">
+      <p class="text-[#003f87] font-medium">לדברי תורה ועדכונים נוספים</p>
+      <p class="text-gray-600 text-sm mt-1">עקבו אחרינו בוואטסאפ ובפייסבוק</p>
+      <a href="/contact" class="inline-block mt-3 bg-[#003f87] text-white font-medium px-6 py-2 rounded hover:bg-[#0057b8] transition-colors text-sm">
+        צרו קשר
+      </a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  details[open] .details-arrow {
+    transform: rotate(180deg);
+  }
+</style>
+
+<script>
+  // Load the PDF iframe only when the <details> is opened to avoid
+  // the loading="lazy" / hidden-element problem.
+  document.querySelectorAll('details').forEach(function (details) {
+    details.addEventListener('toggle', function () {
+      if (details.open) {
+        var iframe = details.querySelector('iframe.pdf-frame[data-src]');
+        if (iframe) {
+          iframe.src = iframe.getAttribute('data-src');
+          iframe.removeAttribute('data-src');
+        }
+      }
+    });
+  });
+</script>
