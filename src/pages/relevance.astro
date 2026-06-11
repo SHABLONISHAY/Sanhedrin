@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <Layout title="רלוונטיות להיום">
@@ -8,59 +9,102 @@ import Layout from '../layouts/Layout.astro';
     <div class="w-16 h-1 bg-[#003f87] mb-8"></div>
 
     <div class="space-y-6">
+
       <div class="bg-white rounded-lg border border-[#dde3ed] p-8 shadow-sm">
-        <h2 class="text-xl font-bold text-[#003f87] mb-4">רקע הלכתי</h2>
         <p class="text-gray-700 leading-relaxed mb-4">
-          גדול הפוסקים שעסק בעניין הוא הרמב"ם. בספרו 'היד החזקה' הרמב"ם פוסק את חובת תהליך בנין עם ישראל בארצו, ומרחיב בחיוב הקמת הסנהדרין ותפקידיה עם שיבתנו לארצנו.
+          האחד מסתכל על השני בעין חשדנית ויש מתנשאים ויש מזלזלים בכאלו שאינם כמותם והפילוג במחנה שומרי התורה הוא פירוד הלבבות. ציבור שומרי המצוות מתגדר בשלו. הציבור המסורתי מתבלבל מהפסקים השונים. והציבור הכללי רואה זאת ומתרחק עוד ועוד...
         </p>
+        <p class="text-gray-700 leading-relaxed font-semibold">
+          לא עוד ספרדי / אשכנזי / חרדי / דתי / חסידי וכו'!
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-3">
+          עפ"י הוראת ה' אין מקום לזה — יש מוסד עליון שמאחד את ההלכה ומוציא פסק אחיד בלבד!
+        </p>
+      </div>
 
-        <div class="bg-[#f5f8ff] rounded-lg border-r-4 border-[#003f87] p-4 mb-4 space-y-3 text-sm text-gray-700 leading-relaxed">
-          <p><strong class="text-[#003f87]">הלכה א</strong> — שלש מצות נצטוו ישראל בשעת כניסתן לארץ: למנות להם מלך שנאמר שום תשים עליך מלך, ולהכרית זרעו של עמלק, ולבנות בית הבחירה שנאמר לשכנו תדרשו ובאת שמה.</p>
-          <p><strong class="text-[#003f87]">הלכה ב</strong> — מינוי מלך קודם למלחמת עמלק שנאמר "אותי שלח ה' למשחך למלך עתה לך והכיתה את עמלק."</p>
-          <p><strong class="text-[#003f87]">הלכה ג</strong> — אין מעמידין מלך בתחילה אלא על פי בית דין של שבעים ואחד זקנים ועל פי נביא.</p>
-          <footer class="text-[#003f87] font-medium pt-2">משנה תורה לרמב"ם · הלכות מלכים ומלחמות · פרק ראשון</footer>
+      <div class="bg-white rounded-lg border border-[#dde3ed] p-8 shadow-sm">
+        <h2 class="text-xl font-bold text-[#003f87] mb-4">כיצד פועלת הסנהדרין</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          בתוך הסנהדרין ישבו שבעים ואחד חכמים שייצגו את מגוון הדעות ההלכתיות. בכל דיון החלו לשמוע את דעת הדיינים הצעירים קודם, כדי שלא ייווצר מצב שהוותיקים יכריעו והקטנים בלית ברירה לא ישמיעו את דעתם.
+        </p>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          לבסוף הייתה נערכת הצבעה ובה הרוב מכריע!
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          דיין ככל שיהיה גדול וחכם ביותר שיצא נגד פסיקת הסנהדרין, עלול להיכנס בהגדרה של 'זקן ממרא' שעונשו חמור.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg border border-[#dde3ed] p-8 shadow-sm">
+        <h2 class="text-xl font-bold text-[#003f87] mb-4">הסנהדרין — החיוב ההלכתי בדורנו</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          כיום מששבנו לארץ, שב הציווי ההלכתי למנות סנהדרין.
+        </p>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          אך מאידך, יש אתגר קשה; כל גורם הלכתי / רב / ראש ישיבה וכד' חושש מפגיעה במעמדו, ברלוונטיות שלו ובפסיקותיו הטוטאליות...
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          לדבר יש השלכות רבות. אנשי חצר רבים הסובבים את גדולי הדור ושיטותיהם מתפרנסים מבד"צים נותני כשרות ייחודיים לפסיקותיהם, וממערך שלם של מוסדות המושתתים על שיטתם.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg border border-[#dde3ed] p-8 shadow-sm">
+        <h2 class="text-xl font-bold text-[#003f87] mb-4">הלקח מדורות עברו</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          כשעודדו הגר"א והבעש"ט את תלמידיהם לעלות לא"י כחלק מתהליך הגאולה, לא כל ראשי הקהילות השכילו לראות זאת. וכשהגיעו רבנים שעוררו על שיבת ציון — רבני הקהילות יצאו כנגדם בחרמות ונידוים על כך שהם מפרקים את הקהילה ושולחים את האנשים למקום סכנה. כולנו יודעים היטב מה עלה בגורלם של הקהילות הללו באירופה...
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          כולנו מתפללים כל יום 'השיבה שופטינו כבראשונה' — מתפללים להשבת הסנהדרין, אך בפועל לא עושים מאמץ לשנות.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg border border-[#dde3ed] p-8 shadow-sm">
+        <h2 class="text-xl font-bold text-[#003f87] mb-4">הקושי הנפשי של בעלי המעמד</h2>
+        <p class="text-gray-700 leading-relaxed mb-2">מובא במסכת אבות דרבי נתן (נוסחא א, פרק י):</p>
+        <blockquote class="border-r-4 border-[#003f87] pr-4 py-3 bg-[#f5f8ff] rounded text-gray-700 text-sm leading-relaxed my-4">
+          "הוא היה אומר, כל מי שיאמר לי קודם שאכנס לגדולה זו הכנס, רוצה אני שארד עמו עד לחייו. עכשיו שנכנסתי, כל מי שיאמר לי רד הימנה, רוצה אני שאפיל עליו קומקומוס של חמין. שהגדולה קשה היא להעלותה. וכשם שקשה היא להעלותה, כך קשה להורידה. שכן מצינו בשאול בשעה שאמר לו עמוד במלכות, היה מתחבא שנאמר (ש"א י) 'ויאמר ה' הנה הוא נחבא אל הכלים'. ובשעה שאמר ליה רד הימנה, היה מחזיר אחרי דוד להרגו."
+        </blockquote>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          דהיינו, ככל שהאדם הוא בעל מעמד ושררה רבנית — הניסיון שלו גדול יותר וה'הפסד' לכאורה הוא עצום מבחינתו! לכן, עלינו הקטנים והפשוטים לעורר מלמטה תביעה זו לאיחוד החכמים.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          עלינו לבקש מכל חכם שבאמת מבטל את עצמו וכבודו ומוותר על מוטות השליטה והתקציבים — להתאחד ולהתכנס בסנהדרין שתאחד את ההלכה ועימה את כל האומה. ומכאן קצרה הדרך לעוד שלב משמעותי בגאולה.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg border border-[#dde3ed] p-8 shadow-sm">
+        <h2 class="text-xl font-bold text-[#003f87] mb-4">אחדות ממשית כבר היום</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          כבר היום ניתן לראות מפגן אחדות מרגש בין יוזמי חידוש הסנהדרין. ניתן לראות תלמידי חכמים מזרמים שונים: ספרדים, אשכנזים, חרדים, כיפות סרוגות וחסידים — היושבים יחדיו, מכבדים זה את זה ופועלים במשותף לחידוש וכינון הסנהדרין.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          אם גם אתם רוצים להיות שותפים ליוזמה ברוכה זו — הצטרפו עוד היום. שתפו את העניין בכל דרך אפשרית! כל סיוע יתקבל בברכה.
+        </p>
+        <div class="mt-4">
+          <a href={`${base}contact`} class="inline-block bg-[#003f87] text-white font-medium px-6 py-2.5 rounded hover:bg-[#0057b8] transition-colors text-sm">
+            צרו קשר והצטרפו
+          </a>
         </div>
       </div>
 
       <div class="bg-white rounded-lg border border-[#dde3ed] p-8 shadow-sm">
-        <h2 class="text-xl font-bold text-[#003f87] mb-4">הלכות סנהדרין — שלושים מצוות</h2>
-        <p class="text-gray-600 text-sm mb-4">משנה תורה לרמב"ם · ספר שופטים · הלכות סנהדרין והעונשין המסורין להם</p>
-        <p class="text-gray-700 leading-relaxed mb-4">יש בכללן שלושים מצות: עשר מצוות עשה, ועשרים מצוות לא תעשה.</p>
-        <div class="bg-[#f5f8ff] rounded-lg border border-[#dde3ed] p-4 text-sm text-gray-700 leading-loose">
-          <p>
-            <strong class="text-[#003f87]">(א)</strong> למנות שופטים.
-            <strong class="text-[#003f87]">(ב)</strong> שלא למנות דיין שאינו יודע דרך המשפט.
-            <strong class="text-[#003f87]">(ג)</strong> לנטות אחרי רבים אם נחלקו השופטים.
-            <strong class="text-[#003f87]">(ד)</strong> שלא להרוג אם רבו המחייבין באיש אחד, עד שיהיו יתר שנים.
-            <strong class="text-[#003f87]">(ה)</strong> שלא ילמד חובה, מי שלמד זכות בדיני נפשות.
-            <strong class="text-[#003f87]">(ו)</strong> להרוג בסקילה.
-            <strong class="text-[#003f87]">(ז)</strong> להרוג בשריפה.
-            <strong class="text-[#003f87]">(ח)</strong> להרוג בסיף.
-            <strong class="text-[#003f87]">(ט)</strong> להרוג בחנק.
-            <strong class="text-[#003f87]">(י)</strong> לתלות.
-            <strong class="text-[#003f87]">(יא)</strong> לקבור הנהרג ביום הריגתו.
-            <strong class="text-[#003f87]">(יב)</strong> שלא תלין נבלתו.
-            <strong class="text-[#003f87]">(יג)</strong> שלא להחיות מכשף.
-            <strong class="text-[#003f87]">(יד)</strong> להלקות לרשע.
-            <strong class="text-[#003f87]">(טו)</strong> שלא יוסיף בהכיית הלוקה.
-            <strong class="text-[#003f87]">(טז)</strong> שלא להרוג נקי באוּמדן הדעת.
-            <strong class="text-[#003f87]">(יז)</strong> שלא לענוש אנוּס.
-            <strong class="text-[#003f87]">(יח)</strong> שלא לחוס על הורג חבֵרו או חובל בו.
-            <strong class="text-[#003f87]">(יט)</strong> שלא לרחם את הדל בדין.
-            <strong class="text-[#003f87]">(כ)</strong> שלא להדר גדול בדין.
-            <strong class="text-[#003f87]">(כא)</strong> שלא להטות הדין על בעל עבירות אף על פי שהוא חוטא.
-            <strong class="text-[#003f87]">(כב)</strong> שלא לעוֵל משפט.
-            <strong class="text-[#003f87]">(כג)</strong> שלא להטות משפט גר יתום.
-            <strong class="text-[#003f87]">(כד)</strong> לשפוט בצדק.
-            <strong class="text-[#003f87]">(כה)</strong> שלא לירא בדין מאיש זרוע.
-            <strong class="text-[#003f87]">(כו)</strong> שלא ליקח שוחד.
-            <strong class="text-[#003f87]">(כז)</strong> שלא לישא שמע שוא.
-            <strong class="text-[#003f87]">(כח)</strong> שלא לקלל הדיינין.
-            <strong class="text-[#003f87]">(כט)</strong> שלא לקלל הנשיא.
-            <strong class="text-[#003f87]">(ל)</strong> שלא לקלל אדם משאר בני ישראל הכשרים.
-          </p>
-        </div>
+        <h2 class="text-xl font-bold text-[#003f87] mb-4">הרקע ההלכתי — מצוות הסנהדרין</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          גדול הפוסקים שעסק בעניין הוא הרמב"ם. בספרו 'היד החזקה', הרמב"ם פוסק את חובת תהליך בניין עם ישראל בארצו, ומרחיב בחיוב הקמת הסנהדרין ותפקידיה עם שיבתנו לארצנו.
+        </p>
+        <blockquote class="border-r-4 border-[#003f87] pr-4 py-3 bg-[#f5f8ff] rounded text-gray-700 text-sm leading-relaxed my-4">
+          <p class="font-semibold mb-2">משנה תורה לרמב"ם · ספר שופטים · הלכות מלכים ומלחמות · פרק ראשון:</p>
+          <p class="mb-2">שלש מצות נצטוו ישראל בשעת כניסתן לארץ: למנות להם מלך שנאמר "שום תשים עליך מלך", ולהכרית זרעו של עמלק, ולבנות בית הבחירה שנאמר "לשכנו תדרשו ובאת שמה".</p>
+          <p class="mb-2">מינוי מלך קודם למלחמת עמלק, ומלחמת עמלק קודמת לבנין הבית.</p>
+          <p>אין מעמידין מלך בתחילה אלא על פי בית דין של שבעים ואחד זקנים ועל פי נביא.</p>
+        </blockquote>
+        <blockquote class="border-r-4 border-[#003f87] pr-4 py-3 bg-[#f5f8ff] rounded text-gray-700 text-sm leading-relaxed my-4">
+          <p class="font-semibold mb-2">משנה תורה לרמב"ם · ספר שופטים · הלכות סנהדרין והעונשין המסורין להם:</p>
+          <p class="mb-2">יש בכללן שלושים מצות: עשר מצוות עשה, ועשרים מצוות לא תעשה.</p>
+          <p>(א) למנות שופטים. (ב) שלא למנות דיין שאינו יודע דרך המשפט. (ג) לנטות אחרי רבים אם נחלקו השופטים. (ד) שלא להרוג אם רבו המחייבין באיש אחד, עד שיהיו יתר שנים. (ה) שלא ילמד חובה, מי שלמד זכות בדיני נפשות...</p>
+        </blockquote>
       </div>
+
     </div>
   </div>
 </Layout>

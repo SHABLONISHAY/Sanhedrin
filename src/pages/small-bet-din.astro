@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+
+<Layout title="הקמת ב&quot;ד סנהדרין קטנה בכל עיר">
+  <div class="max-w-4xl mx-auto px-6 py-10">
+    <h1 class="text-3xl font-bold text-[#003f87] mb-2">הקמת ב"ד סנהדרין קטנה בכל עיר</h1>
+    <div class="w-16 h-1 bg-[#003f87] mb-8"></div>
+
+    <div class="space-y-6">
+
+      <div class="bg-white rounded-lg border border-[#dde3ed] p-8 shadow-sm">
+        <h2 class="text-xl font-bold text-[#003f87] mb-4">מהי סנהדרי קטנה?</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          מלבד הסנהדרין הגדולה (בית דין של 71 דיינים), ציוותה התורה להקים בכל עיר ועיר "סנהדרי קטנה" — בית דין של עשרים ושלושה דיינים. בית דין זה רשאי לדון אף בדיני נפשות.
+        </p>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          לפי ההלכה, בית דין כזה מעמידים בכל קהילה יהודית בארץ ישראל שיש בה יותר מ-120 אנשים, ועוד אחד לכל שבט ושבט.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          הסנהדרין שהוקמה כיום עוסקת גם בהקמת מערכת משפט כלל ארצית בה מטבע הדברים לא יהיה עינוי דין כמקובל כיום. מספר השופטים יהיה אלפים רבים, והדבר שיקשה לסנהדרי קטנה יופנה לסנהדרי גדולה לקבלת הכרעה.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg border border-[#dde3ed] p-8 shadow-sm">
+        <h2 class="text-xl font-bold text-[#003f87] mb-4">שלושת סוגי בתי הדין</h2>
+        <div class="space-y-4">
+          <div class="flex gap-4 items-start">
+            <span class="shrink-0 mt-1 w-8 h-8 rounded-full bg-[#e8f0fb] text-[#003f87] font-bold text-sm flex items-center justify-center">א</span>
+            <div>
+              <p class="font-semibold text-[#003f87] mb-1">בית דין של שלושה דיינים</p>
+              <p class="text-gray-700 text-sm leading-relaxed">רשאי לדון בדיני ממונות (הלוואות, גזלות, חבלות וכיוצא בהן). בית דין מסוג זה נוהג אף בחוץ לארץ.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="shrink-0 mt-1 w-8 h-8 rounded-full bg-[#e8f0fb] text-[#003f87] font-bold text-sm flex items-center justify-center">ב</span>
+            <div>
+              <p class="font-semibold text-[#003f87] mb-1">סנהדרי קטנה — בית דין של עשרים ושלושה דיינים</p>
+              <p class="text-gray-700 text-sm leading-relaxed">רשאי לדון אף בדיני נפשות. מעמידים אותו בכל קהילה יהודית בארץ ישראל שיש בה יותר מ-120 אנשים.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="shrink-0 mt-1 w-8 h-8 rounded-full bg-[#003f87] text-white font-bold text-sm flex items-center justify-center">ג</span>
+            <div>
+              <p class="font-semibold text-[#003f87] mb-1">הסנהדרין הגדולה — בית דין של שבעים ואחד דיינים</p>
+              <p class="text-gray-700 text-sm leading-relaxed">מוסמכת לדון בדיני נפשות חמורים במיוחד ופוסקת הלכה לכל ישראל. זוהי "סנהדרי גדולה".</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg border border-[#dde3ed] p-8 shadow-sm">
+        <h2 class="text-xl font-bold text-[#003f87] mb-4">ראשי ישיבה המצטרפים ליוזמה</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          בין הרבנים שהצטרפו ליוזמת הסמיכה והקמת בתי הדין המקומיים:
+        </p>
+        <div class="grid md:grid-cols-2 gap-4">
+          {[
+            { name: 'הרב גלעד חלא', role: "ראש הישיבה הנבחר — ראש ישיבת ההסדר 'אורות משה'" },
+            { name: 'הרב עמרם עטרי', role: "ראש כולל 'נחלת ישורון'" },
+            { name: 'הרב תומר חלא', role: "ר\"מ בישיבת ההסדר" },
+            { name: 'הרב שלמה תם', role: "תלמיד חכם וסוכן ביטוח" },
+            { name: 'הרב שאול עשרי', role: "רב בית כנסת" },
+            { name: 'הרב בושארי יאיר', role: "ראש מוסדות 'אור זרוע'" },
+            { name: 'הרב לוי צובארה', role: "רב בית הכנסת 'נחלת עמרם' ואברך ב'נחלת ישורון'" },
+            { name: 'הרב דויד עוזאני', role: "רב בית הכנסת 'יריעות שלמה' וראש כולל 'חסד אברהם'" },
+          ].map(m => (
+            <div class="bg-[#f5f8ff] rounded-lg p-4 border border-[#dde3ed]">
+              <p class="font-semibold text-[#003f87]">{m.name}</p>
+              <p class="text-gray-600 text-sm mt-1">{m.role}</p>
+            </div>
+          ))}
+        </div>
+        <p class="text-gray-600 text-sm mt-4 italic border-t border-[#dde3ed] pt-4">
+          עד לסוף אב נשלים ל-23 סמוכין. כה ייתן ה' וכה יוסיף.
+        </p>
+      </div>
+
+      <div class="bg-[#e8f0fb] rounded-lg border border-[#c5d5f0] p-6">
+        <p class="text-[#003f87] font-semibold mb-2">רוצה להצטרף?</p>
+        <p class="text-gray-700 text-sm mb-4">אם הנך תלמיד חכם או בעל תעודת סמיכה לרבנות — הרי אתה מוזמן להיות חלק מהיוזמה ולסייע בהקמת בית דין בעירך.</p>
+        <a href={`${base}contact`} class="inline-block bg-[#003f87] text-white font-medium px-5 py-2 rounded hover:bg-[#0057b8] transition-colors text-sm">
+          צרו קשר
+        </a>
+      </div>
+
+    </div>
+  </div>
+</Layout>

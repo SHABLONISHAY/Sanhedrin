@@ -3,13 +3,18 @@
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
 const links = [
-  { href: base,                   label: 'ראשי' },
-  { href: `${base}faq`,           label: 'שאלות נפוצות' },
-  { href: `${base}articles`,      label: 'מאמרים ותומכים' },
-  { href: `${base}sanhedrin`,     label: 'הסנהדרין ומשמעה' },
-  { href: `${base}rulings`,       label: 'פסיקות' },
-  { href: `${base}about`,         label: 'אודות' },
-  { href: `${base}contact`,       label: 'צור קשר' },
+  { href: base,                      label: 'ראשי' },
+  { href: `${base}faq`,              label: 'שאלות נפוצות' },
+  { href: `${base}relevance`,        label: 'רלוונטיות להיום' },
+  { href: `${base}articles`,         label: 'מאמרים ותומכים' },
+  { href: `${base}sanhedrin`,        label: 'הסנהדרין ומשמעה' },
+  { href: `${base}smicha`,           label: 'חידוש הסמיכה' },
+  { href: `${base}small-bet-din`,    label: 'ב"ד קטנה בכל עיר' },
+  { href: `${base}tzochek`,          label: 'צוחק מי שצוחק' },
+  { href: `${base}parshiot`,         label: 'פרשות השבוע' },
+  { href: `${base}rulings`,          label: 'פסיקות' },
+  { href: `${base}about`,            label: 'אודות' },
+  { href: `${base}contact`,          label: 'צור קשר' },
 ];
 
 const norm = (p: string) => p.endsWith('/') && p.length > 1 ? p.slice(0, -1) : p;

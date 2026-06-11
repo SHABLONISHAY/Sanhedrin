@@ -115,5 +115,25 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
       <a href={`${base}sanhedrin`} class="inline-block mt-3 text-sm text-[#003f87] font-medium hover:underline">על הסנהדרין ומשמעה ◀</a>
     </div>
 
+    <!-- Additional topics -->
+    <div class="bg-white rounded-lg border border-[#dde3ed] p-8 shadow-sm">
+      <h2 class="text-xl font-bold text-[#003f87] mb-5">נושאים נוספים באתר</h2>
+      <div class="grid md:grid-cols-2 gap-3">
+        {[
+          { href: `${base}relevance`,     label: 'רלוונטיות להיום',                    desc: 'מדוע חידוש הסנהדרין דחוף בדורנו' },
+          { href: `${base}smicha`,        label: 'חידוש הסמיכה',                        desc: 'כיצד הוחדשה הסמיכה על פי הרמב"ם' },
+          { href: `${base}small-bet-din`, label: 'ב"ד סנהדרין קטנה בכל עיר',           desc: 'הקמת בתי דין מקומיים בכל קהילה' },
+          { href: `${base}tzochek`,       label: 'צוחק מי שצוחק אחרון',                desc: 'הלקח ההיסטורי ממתנגדי שיבת ציון' },
+          { href: `${base}parshiot`,      label: 'פרשות השבוע',                         desc: 'הסנהדרין בפרשיות התורה השבועיות' },
+          { href: `${base}faq`,           label: 'שאלות נפוצות',                        desc: 'תשובות לשאלות הנפוצות ביותר' },
+        ].map(item => (
+          <a href={item.href} class="block p-4 rounded-lg border border-[#dde3ed] hover:border-[#003f87] hover:bg-[#f5f8ff] transition-colors group">
+            <p class="font-semibold text-[#003f87] group-hover:underline text-sm">{item.label} ◀</p>
+            <p class="text-gray-500 text-xs mt-0.5">{item.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+
   </div>
 </Layout>
