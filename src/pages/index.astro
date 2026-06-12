@@ -17,11 +17,13 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
         </a>
       </div>
       <div class="shrink-0">
-        <img
-          src={`${base}images/39adaf0c6f913e19ba81a7ad56d7af05.jpg`}
-          alt="רבני הסנהדרין"
-          class="w-72 h-auto rounded-lg shadow-lg border-2 border-blue-300"
-        />
+        <a href={`${base}articles`}>
+          <img
+            src={`${base}images/39adaf0c6f913e19ba81a7ad56d7af05.jpg`}
+            alt="רבני הסנהדרין"
+            class="w-72 h-auto rounded-lg shadow-lg border-2 border-blue-300 hover:opacity-90 transition-opacity"
+          />
+        </a>
       </div>
     </div>
   </section>
