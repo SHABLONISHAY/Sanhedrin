@@ -1,25 +1,27 @@
 ---
-// Ensure BASE_URL always ends with '/' so ${base}path works correctly
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
-const links = [
-  { href: base,                      label: 'ראשי' },
-  { href: `${base}faq`,              label: 'שאלות נפוצות' },
-  { href: `${base}relevance`,        label: 'רלוונטיות להיום' },
-  { href: `${base}articles`,         label: 'מאמרים ותומכים' },
-  { href: `${base}sanhedrin`,        label: 'הסנהדרין ומשמעה' },
-  { href: `${base}smicha`,           label: 'חידוש הסמיכה' },
-  { href: `${base}small-bet-din`,    label: 'ב"ד קטנה בכל עיר' },
-  { href: `${base}tzochek`,          label: 'צוחק מי שצוחק' },
-  { href: `${base}parshiot`,         label: 'פרשות השבוע' },
-  { href: `${base}rulings`,          label: 'פסיקות' },
-  { href: `${base}about`,            label: 'אודות' },
-  { href: `${base}contact`,          label: 'צור קשר' },
+const primary = [
+  { href: base,                   label: 'ראשי' },
+  { href: `${base}relevance`,     label: 'רלוונטיות להיום' },
+  { href: `${base}rulings`,       label: 'פסיקות' },
+  { href: `${base}articles`,      label: 'מאמרים ותומכים' },
+];
+
+const more = [
+  { href: `${base}faq`,           label: 'שאלות נפוצות' },
+  { href: `${base}sanhedrin`,     label: 'הסנהדרין ומשמעה' },
+  { href: `${base}smicha`,        label: 'חידוש הסמיכה' },
+  { href: `${base}small-bet-din`, label: 'ב"ד קטנה בכל עיר' },
+  { href: `${base}tzochek`,       label: 'צוחק מי שצוחק אחרון' },
+  { href: `${base}parshiot`,      label: 'פרשות השבוע' },
+  { href: `${base}about`,         label: 'אודות' },
 ];
 
 const norm = (p: string) => p.endsWith('/') && p.length > 1 ? p.slice(0, -1) : p;
 const currentPath = norm(Astro.url.pathname);
 const isActive = (href: string) => norm(href) === currentPath;
+const moreActive = more.some(l => isActive(l.href));
 ---
 
 <header class="bg-white shadow-sm border-t-4 border-t-[#003f87] sticky top-0 z-50">
@@ -32,8 +34,8 @@ const isActive = (href: string) => norm(href) === currentPath;
       />
     </a>
 
-    <ul class="flex flex-wrap gap-0.5 list-none m-0 p-0">
-      {links.map(link => (
+    <ul class="flex items-center gap-0.5 list-none m-0 p-0">
+      {primary.map(link => (
         <li class="shrink-0">
           <a
             href={link.href}
@@ -47,6 +49,86 @@ const isActive = (href: string) => norm(href) === currentPath;
           </a>
         </li>
       ))}
+
+      <!-- "More" dropdown — before contact -->
+      <li class="shrink-0 relative" id="more-nav">
+        <button
+          id="more-btn"
+          aria-haspopup="true"
+          aria-expanded="false"
+          class={`flex items-center gap-1 px-3 py-2 rounded text-sm font-medium transition-colors whitespace-nowrap
+            ${moreActive
+              ? 'text-[#003f87] bg-[#e8f0fb] font-semibold'
+              : 'text-gray-700 hover:bg-[#f0f4ff] hover:text-[#003f87]'
+            }`}
+        >
+          עוד
+          <svg id="more-chevron" class="w-3.5 h-3.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        <ul
+          id="more-menu"
+          class="hidden absolute left-0 top-full mt-1 bg-white border border-[#dde3ed] rounded-lg shadow-lg min-w-max py-1 z-50 list-none p-0 m-0"
+          role="menu"
+        >
+          {more.map(link => (
+            <li role="none">
+              <a
+                href={link.href}
+                role="menuitem"
+                class={`block px-4 py-2 text-sm whitespace-nowrap transition-colors
+                  ${isActive(link.href)
+                    ? 'text-[#003f87] bg-[#e8f0fb] font-semibold'
+                    : 'text-gray-700 hover:bg-[#f0f4ff] hover:text-[#003f87]'
+                  }`}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </li>
+
+      <!-- Contact — always last -->
+      <li class="shrink-0">
+        <a
+          href={`${base}contact`}
+          class={`px-3 py-2 rounded text-sm font-medium transition-colors whitespace-nowrap
+            ${isActive(`${base}contact`)
+              ? 'text-[#003f87] bg-[#e8f0fb] font-semibold'
+              : 'text-gray-700 hover:bg-[#f0f4ff] hover:text-[#003f87]'
+            }`}
+        >
+          צור קשר
+        </a>
+      </li>
     </ul>
   </nav>
 </header>
+
+<script>
+  const btn = document.getElementById('more-btn');
+  const menu = document.getElementById('more-menu');
+  const chevron = document.getElementById('more-chevron');
+
+  function open() {
+    menu!.classList.remove('hidden');
+    btn!.setAttribute('aria-expanded', 'true');
+    chevron!.style.transform = 'rotate(180deg)';
+  }
+  function close() {
+    menu!.classList.add('hidden');
+    btn!.setAttribute('aria-expanded', 'false');
+    chevron!.style.transform = '';
+  }
+
+  btn!.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menu!.classList.contains('hidden') ? open() : close();
+  });
+
+  document.addEventListener('click', close);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+</script>
