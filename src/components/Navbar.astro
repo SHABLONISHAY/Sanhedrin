@@ -1,14 +1,21 @@
 ---
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
-const primary = [
-  { href: base,                   label: 'ראשי' },
-  { href: `${base}relevance`,     label: 'רלוונטיות להיום' },
-  { href: `${base}rulings`,       label: 'פסיקות' },
-  { href: `${base}articles`,      label: 'מאמרים ותומכים' },
+const norm = (p: string) => p.endsWith('/') && p.length > 1 ? p.slice(0, -1) : p;
+const currentPath = norm(Astro.url.pathname);
+const isActive = (href: string) => norm(href) === currentPath;
+
+// These overflow into "עוד" on smaller screens, appear as direct links on larger ones.
+// primaryClass: Tailwind classes for the <li> in the primary nav
+// moreClass: Tailwind classes for the <li> in the dropdown (opposite — shown only when hidden from primary)
+const overflow = [
+  { href: `${base}relevance`, label: 'רלוונטיות להיום', primaryClass: 'hidden sm:block', moreClass: 'sm:hidden' },
+  { href: `${base}rulings`,   label: 'פסיקות',           primaryClass: 'hidden md:block', moreClass: 'md:hidden' },
+  { href: `${base}articles`,  label: 'מאמרים ותומכים',  primaryClass: 'hidden lg:block', moreClass: 'lg:hidden' },
 ];
 
-const more = [
+// Always inside the dropdown
+const alwaysMore = [
   { href: `${base}faq`,           label: 'שאלות נפוצות' },
   { href: `${base}sanhedrin`,     label: 'הסנהדרין ומשמעה' },
   { href: `${base}smicha`,        label: 'חידוש הסמיכה' },
@@ -18,10 +25,21 @@ const more = [
   { href: `${base}about`,         label: 'אודות' },
 ];
 
-const norm = (p: string) => p.endsWith('/') && p.length > 1 ? p.slice(0, -1) : p;
-const currentPath = norm(Astro.url.pathname);
-const isActive = (href: string) => norm(href) === currentPath;
-const moreActive = more.some(l => isActive(l.href));
+const moreActive = [...overflow, ...alwaysMore].some(l => isActive(l.href));
+
+const linkClass = (href: string) =>
+  `px-3 py-2 rounded text-sm font-medium transition-colors whitespace-nowrap ${
+    isActive(href)
+      ? 'text-[#003f87] bg-[#e8f0fb] font-semibold'
+      : 'text-gray-700 hover:bg-[#f0f4ff] hover:text-[#003f87]'
+  }`;
+
+const menuItemClass = (href: string) =>
+  `block px-4 py-2 text-sm whitespace-nowrap transition-colors ${
+    isActive(href)
+      ? 'text-[#003f87] bg-[#e8f0fb] font-semibold'
+      : 'text-gray-700 hover:bg-[#f0f4ff] hover:text-[#003f87]'
+  }`;
 ---
 
 <header class="bg-white shadow-sm border-t-4 border-t-[#003f87] sticky top-0 z-50">
@@ -35,22 +53,20 @@ const moreActive = more.some(l => isActive(l.href));
     </a>
 
     <ul class="flex items-center gap-0.5 list-none m-0 p-0">
-      {primary.map(link => (
-        <li class="shrink-0">
-          <a
-            href={link.href}
-            class={`px-3 py-2 rounded text-sm font-medium transition-colors whitespace-nowrap
-              ${isActive(link.href)
-                ? 'text-[#003f87] bg-[#e8f0fb] font-semibold'
-                : 'text-gray-700 hover:bg-[#f0f4ff] hover:text-[#003f87]'
-              }`}
-          >
-            {link.label}
-          </a>
+
+      <!-- ראשי — always visible -->
+      <li class="shrink-0">
+        <a href={base} class={linkClass(base)}>ראשי</a>
+      </li>
+
+      <!-- Overflow links — visible as direct links from sm/md/lg and up -->
+      {overflow.map(link => (
+        <li class={`shrink-0 ${link.primaryClass}`}>
+          <a href={link.href} class={linkClass(link.href)}>{link.label}</a>
         </li>
       ))}
 
-      <!-- "More" dropdown — before contact -->
+      <!-- "עוד" dropdown -->
       <li class="shrink-0 relative" id="more-nav">
         <button
           id="more-btn"
@@ -73,37 +89,32 @@ const moreActive = more.some(l => isActive(l.href));
           class="hidden absolute left-0 top-full mt-1 bg-white border border-[#dde3ed] rounded-lg shadow-lg min-w-max py-1 z-50 list-none p-0 m-0"
           role="menu"
         >
-          {more.map(link => (
+          <!-- Overflow links shown here only when they're hidden from the primary nav -->
+          {overflow.map(link => (
+            <li role="none" class={link.moreClass}>
+              <a href={link.href} role="menuitem" class={menuItemClass(link.href)}>{link.label}</a>
+            </li>
+          ))}
+
+          <!-- Divider shown only when overflow items are present (mobile/sm/md) -->
+          <li class="lg:hidden" role="none" aria-hidden="true">
+            <hr class="my-1 border-[#dde3ed]" />
+          </li>
+
+          <!-- Always-in-dropdown links -->
+          {alwaysMore.map(link => (
             <li role="none">
-              <a
-                href={link.href}
-                role="menuitem"
-                class={`block px-4 py-2 text-sm whitespace-nowrap transition-colors
-                  ${isActive(link.href)
-                    ? 'text-[#003f87] bg-[#e8f0fb] font-semibold'
-                    : 'text-gray-700 hover:bg-[#f0f4ff] hover:text-[#003f87]'
-                  }`}
-              >
-                {link.label}
-              </a>
+              <a href={link.href} role="menuitem" class={menuItemClass(link.href)}>{link.label}</a>
             </li>
           ))}
         </ul>
       </li>
 
-      <!-- Contact — always last -->
+      <!-- צור קשר — always last -->
       <li class="shrink-0">
-        <a
-          href={`${base}contact`}
-          class={`px-3 py-2 rounded text-sm font-medium transition-colors whitespace-nowrap
-            ${isActive(`${base}contact`)
-              ? 'text-[#003f87] bg-[#e8f0fb] font-semibold'
-              : 'text-gray-700 hover:bg-[#f0f4ff] hover:text-[#003f87]'
-            }`}
-        >
-          צור קשר
-        </a>
+        <a href={`${base}contact`} class={linkClass(`${base}contact`)}>צור קשר</a>
       </li>
+
     </ul>
   </nav>
 </header>
