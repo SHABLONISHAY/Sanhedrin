@@ -40,60 +40,62 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
       </p>
     </div>
 
-    <!-- Tiberias & Renewal session photo -->
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="bg-white rounded-lg border border-[#dde3ed] overflow-hidden shadow-sm">
-        <img
-          src={`${base}images/13b5d640cee1b2a4fcb4e5c840e116cb.jpg`}
-          alt="מעמד חידוש הסנהדרין בטבריה"
-          class="w-full h-44 object-cover"
-        />
-        <div class="p-4">
-          <p class="text-sm text-[#003f87] font-semibold">מעמד חידוש הסנהדרין בטבריה (תשס"ה)</p>
-          <p class="text-xs text-gray-500 mt-1">שבעים ואחד סמוכים התכנסו והכריזו על חידוש הסנהדרין</p>
-        </div>
-      </div>
-      <div class="bg-white rounded-lg border border-[#dde3ed] overflow-hidden shadow-sm">
-        <img
-          src={`${base}images/4d34dcb67b7bbeee6c93cd06c1b34a6c.jpg`}
-          alt="טבריה — עיר חידוש הסנהדרין"
-          class="w-full h-44 object-cover"
-        />
-        <div class="p-4 space-y-3">
-          <p class="text-sm text-[#003f87] font-semibold">טבריה — עיר חידוש הסנהדרין</p>
-          <p class="text-xs text-gray-500">לפי המסורת, בטבריה תחודש הסנהדרין בדורות האחרונים</p>
-          <div class="border-t border-[#dde3ed] pt-3 space-y-2 text-xs text-gray-700 leading-relaxed">
-            <p>קבלה ומסורת היא ביד חכמינו ז"ל, כי בטבריה עתידה הסנהדרין להתחדש. כך מובא במסכת ראש השנה לא, ב — שם מונה הגמרא עשר גלויות שגלתה הסנהדרין מירושלים עד טבריה, ומוסיפים חז"ל: <span class="font-medium text-[#003f87]">ומשם עתידין להיגאל.</span></p>
-            <p>אף הרמב"ם בהלכות סנהדרין יד, יב כתב: "כתחילה כשנבנה בית המקדש היו בית דין הגדול יושבין בלשכת הגזית... וכשנתקלקלה השורה גלו ממקום למקום ולעשרה מקומות גלו — <span class="font-medium text-[#003f87]">וסופן לטבריא... וקבלה היא — שבטבריא עתידין לחזור תחילה ומשם נעתקין למקדש!</span>"</p>
-          </div>
-        </div>
+    <!-- 1. תמונת טבריה -->
+    <div class="bg-white rounded-lg border border-[#dde3ed] overflow-hidden shadow-sm">
+      <img
+        src={`${base}images/4d34dcb67b7bbeee6c93cd06c1b34a6c.jpg`}
+        alt="טבריה — עיר חידוש הסנהדרין"
+        class="w-full h-52 object-cover"
+      />
+      <div class="p-4">
+        <p class="text-sm text-[#003f87] font-semibold">טבריה — עיר חידוש הסנהדרין</p>
+        <p class="text-xs text-gray-500 mt-1">לפי המסורת, בטבריה תחודש הסנהדרין בדורות האחרונים</p>
       </div>
     </div>
 
-    <!-- Bold CTA -->
-    <div class="bg-[#003f87] text-white rounded-lg p-8 shadow-sm text-center">
-      <p class="text-lg font-bold leading-relaxed">
-        הגיע הזמן לאחד את עם ישראל בתורה ומצוות, לנער את עצמינו מהגלות הארורה, לבקש חזרה את מלכות בית דוד, את השבת שופטינו כבראשונה — הסנהדרין!
-      </p>
-    </div>
-
-    <!-- Rabbi Meir Ba'al HaNes & Tiberias historical note -->
+    <!-- 2. רבי מאיר בעל הנס -->
     <div class="bg-white rounded-lg border border-[#dde3ed] p-8 shadow-sm">
       <div class="flex items-start gap-3 mb-4">
         <div class="shrink-0 w-1 self-stretch bg-[#003f87] rounded-full"></div>
         <h2 class="text-xl font-bold text-[#003f87]">טבריה ורבי מאיר בעל הנס</h2>
       </div>
       <div class="space-y-3 text-gray-700 leading-relaxed text-sm">
-        <p>
-          רבי מאיר בעל הנס, ידוע כמי שניסה לחדש את הסנהדרין עקב כמיהתו לגאולה, שידע שתגיע לאחר חידוש הסנהדרין.
-        </p>
-        <p>
-          הוא היה בין החכמים שייסדו מחדש את הסנהדרין באושא, לאחר שנעקרה ונסגרה ביבנה, לאחר חורבן בית המקדש השני, בעקבות מרד בר כוכבא בשנים ג'תתצ"ב–ג'תתצ"ו (132–136 למניינם) לספירה.
-        </p>
-        <p>
-          בתלמוד הבבלי מתואר כי שם מונה להיות ה'חכם'. בתקופת מעבר הסנהדרין לאושא ישב רבי מאיר בעיירות טבעין וערדסקוס הסמוכות לחיפה.
-        </p>
+        <p>רבי מאיר בעל הנס, ידוע כמי שניסה לחדש את הסנהדרין עקב כמיהתו לגאולה, שידע שתגיע לאחר חידוש הסנהדרין.</p>
+        <p>הוא היה בין החכמים שייסדו מחדש את הסנהדרין באושא, לאחר שנעקרה ונסגרה ביבנה, לאחר חורבן בית המקדש השני, בעקבות מרד בר כוכבא בשנים ג'תתצ"ב–ג'תתצ"ו (132–136 למניינם) לספירה.</p>
+        <p>בתלמוד הבבלי מתואר כי שם מונה להיות ה'חכם'. בתקופת מעבר הסנהדרין לאושא ישב רבי מאיר בעיירות טבעין וערדסקוס הסמוכות לחיפה.</p>
       </div>
+    </div>
+
+    <!-- 3. תמונת מעמד חידוש הסנהדרין -->
+    <div class="bg-white rounded-lg border border-[#dde3ed] overflow-hidden shadow-sm">
+      <img
+        src={`${base}images/13b5d640cee1b2a4fcb4e5c840e116cb.jpg`}
+        alt="מעמד חידוש הסנהדרין בטבריה"
+        class="w-full h-52 object-cover"
+      />
+      <div class="p-4">
+        <p class="text-sm text-[#003f87] font-semibold">מעמד חידוש הסנהדרין בטבריה (תשס"ה)</p>
+        <p class="text-xs text-gray-500 mt-1">שבעים ואחד סמוכים התכנסו והכריזו על חידוש הסנהדרין</p>
+      </div>
+    </div>
+
+    <!-- 4. קבלה ומסורת -->
+    <div class="bg-white rounded-lg border border-[#dde3ed] p-8 shadow-sm">
+      <div class="flex items-start gap-3 mb-4">
+        <div class="shrink-0 w-1 self-stretch bg-[#003f87] rounded-full"></div>
+        <h2 class="text-xl font-bold text-[#003f87]">קבלה ומסורת — טבריה ועתיד הסנהדרין</h2>
+      </div>
+      <div class="space-y-3 text-gray-700 leading-relaxed text-sm">
+        <p>קבלה ומסורת היא ביד חכמינו ז"ל, כי בטבריה עתידה הסנהדרין להתחדש. כך מובא במסכת ראש השנה לא, ב — שם מונה הגמרא עשר גלויות שגלתה הסנהדרין מירושלים עד טבריה, ומוסיפים חז"ל: <span class="font-semibold text-[#003f87]">ומשם עתידין להיגאל.</span></p>
+        <p>אף הרמב"ם בהלכות סנהדרין יד, יב כתב: "כתחילה כשנבנה בית המקדש היו בית דין הגדול יושבין בלשכת הגזית... וכשנתקלקלה השורה גלו ממקום למקום ולעשרה מקומות גלו — <span class="font-semibold text-[#003f87]">וסופן לטבריא... וקבלה היא — שבטבריא עתידין לחזור תחילה ומשם נעתקין למקדש!</span>"</p>
+      </div>
+    </div>
+
+    <!-- 5. קריאה לפעולה -->
+    <div class="bg-[#003f87] text-white rounded-lg p-8 shadow-sm text-center">
+      <p class="text-lg font-bold leading-relaxed">
+        הגיע הזמן לאחד את עם ישראל בתורה ומצוות, לנער את עצמינו מהגלות הארורה, לבקש חזרה את מלכות בית דוד, את השבת שופטינו כבראשונה — הסנהדרין!
+      </p>
     </div>
 
     <!-- Supporters preview -->
