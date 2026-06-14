@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <Layout title="אודות">
@@ -37,7 +38,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="bg-[#e8f0fb] rounded-lg border border-[#c5d5f0] p-6">
         <p class="text-[#003f87] font-semibold mb-2">אם גם אתם רוצים להיות שותפים ליוזמה ברוכה זו</p>
         <p class="text-gray-700 text-sm">הצטרפו עוד היום. שתפו את העניין בכל דרך אפשרית! כל סיוע יתקבל בברכה.</p>
-        <a href="/contact" class="inline-block mt-3 bg-[#003f87] text-white font-medium px-6 py-2 rounded hover:bg-[#0057b8] transition-colors text-sm">
+        <a href={`${base}contact`} class="inline-block mt-3 bg-[#003f87] text-white font-medium px-6 py-2 rounded hover:bg-[#0057b8] transition-colors text-sm">
           צור קשר
         </a>
       </div>
