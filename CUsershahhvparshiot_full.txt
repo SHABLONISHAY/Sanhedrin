@@ -1,0 +1,45 @@
+Traceback (most recent call last):
+  File "<string>", line 5, in <module>
+    for l in lines: print(l[:300])
+                    ~~~~~^^^^^^^^^
+UnicodeEncodeError: 'utf-8' codec can't encode character '\udc90' in position 124: surrogates not allowed
+[0]|||=g}});
+m("Object.values",function(a){return a?a:function(b){var c=[],d;for(d in b)u(b,d)&&c.push(b[d]);return c}});m("Math.log2",function(a){return a?a:function(b){return Math.log(b)/Math.LN2}});m("Array.prototype.values",function(a){return a?a:function(){return oa(this,function(b,c){return c})}});m("Objec
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var v=this||self,pa=function(a){var b=typeof a;return b!="object"?b:a?Array.isArray(a)?"array":b:"null"},qa=function(a,b){function c(){}c.prototype=b.prototype;a.ba=b.prototype;a.prototype=new c;a.prototype.constructor=a;a.ab=function(d,f,g){for(var n=Array(arguments.length-2),e=2;e may not contain 
+if(O.has("UjQMac"))throw Error("Event  has already been declared.");O.add("UjQMac");I(!0,"Event name  may not contain ':' or ';'");if(O.has("ti6hGc"))throw Error("Event  has already been declared.");O.add("ti6hGc");I(!0,"Event name  may not contain ':' or ';'");if(O.has("ZYIfFd"))throw Error("Event 
+if(O.has("RXQi4b"))throw Error("Event  has already been declared.");O.add("RXQi4b");I(!0,"Event name  may not contain ':' or ';'");if(O.has("sn54Q"))throw Error("Event  has already been declared.");O.add("sn54Q");I(!0,"Event name  may not contain ':' or ';'");if(O.has("eQsQB"))throw Error("Event  ha
+if(O.has("CGLD0d"))throw Error("Event  has already been declared.");O.add("CGLD0d");I(!0,"Event name  may not contain ':' or ';'");if(O.has("ZpywWb"))throw Error("Event  has already been declared.");O.add("ZpywWb");I(!0,"Event name  may not contain ':' or ';'");if(O.has("O1htCb"))throw Error("Event 
+if(O.has("k9KYye"))throw Error("Event  has already been declared.");O.add("k9KYye");I(!0,"Event name  may not contain ':' or ';'");if(O.has("g6cJHd"))throw Error("Event  has already been declared.");O.add("g6cJHd");I(!0,"Event name  may not contain ':' or ';'");if(O.has("otb29e"))throw Error("Event 
+if(O.has("FNFY6c"))throw Error("Event  has already been declared.");O.add("FNFY6c");I(!0,"Event name  may not contain ':' or ';'");if(O.has("TvD9Pc"))throw Error("Event  has already been declared.");O.add("TvD9Pc");I(!0,"Event name  may not contain ':' or ';'");if(O.has("AHmuwe"))throw Error("Event 
+if(O.has("O22p3e"))throw Error("Event  has already been declared.");O.add("O22p3e");I(!0,"Event name  may not contain ':' or ';'");if(O.has("JIbuQc"))throw Error("Event  has already been declared.");O.add("JIbuQc");I(!0,"Event name  may not contain ':' or ';'");if(O.has("ih4XEb"))throw Error("Event 
+if(O.has("sPvj8e"))throw Error("Event  has already been declared.");O.add("sPvj8e");I(!0,"Event name  may not contain ':' or ';'");if(O.has("GvneHb"))throw Error("Event  has already been declared.");O.add("GvneHb");I(!0,"Event name  may not contain ':' or ';'");if(O.has("rcuQ6b"))throw Error("Event 
+if(O.has("dyRcpb"))throw Error("Event  has already been declared.");O.add("dyRcpb");I(!0,"Event name  may not contain ':' or ';'");if(O.has("u0pjoe"))throw Error("Event  has already been declared.");O.add("u0pjoe");"#".replace(/([-()\[\]{}+?*.$\^|,:# is already registered.");this.I[a.toString()]=b};
+var yb=function(a){var b=xb().I[a.toString()];if(!b)throw I(b,"Could not find interface "+a+".Interface ServiceIds must exactly match the class name which was passed to goog.module / goog.provide, but with the Wiz.id suffix without the suffix.\nFor example, goog.module('ns.FooBarInterface') creates 
+var a="H";if(P.H&&P.hasOwnProperty(a))a=P.H;else{wb.push(P);var b=new P;P.H=b;B(P.hasOwnProperty(a),"Could not instantiate singleton.");a=b}return a};var zb=new Map,Ab=new Map,Bb=new Map,Cb=new Map;function Db(a,b){b=Eb(Bb,a,function(){return b});(a=b.l)&&Eb(Cb,a,function(){return new Set}).add(b);r
+function Nb(a){function b(f,g){f&c&&d.push(g)}var c=Ma(a,"state is only maintained on arrays.")[Lb]|0,d=[];b(1,"IS_REPEATED_FIELD");b(2,"IS_IMMUTABLE_ARRAY");b(4,"IS_API_FORMATTED");b(512,"STRING_FORMATTED");b(1024,"GBIGINT_FORMATTED");b(1024,"BINARY");b(8,"ONLY_MUTABLE_VALUES");b(16,"UNFROZEN_SHARE
+a=c>>14&1023||536870912,a!==536870912&&d.push("pivot: "+a));return d.join(",")};var Ob=typeof Symbol!="undefined"&&typeof Symbol.hasInstance!="undefined";Object.freeze({});var Pb=function(){throw Error("please construct maps as mutable then call toImmutable");};if(Ob){var Qb=function(){throw Error("
+["transitionend","animationend","animationstart"]);Object.freeze(Xb);function Yb(a){return Eb(zb,a.toString(),function(){return new Set})};Yb("GmEyCb").add("qTnoBf");function Zb(a,b,c,d){d=d===void 0?!1:d;b=new C(a,b||void 0,c,d===void 0?!1:d);return Db(a,b)};function $b(a){return Zb(a,a,[])};var ac
+function fc(a,b,c){La(a);if(Array.isArray(b)){Ma(b);for(var d=0;d"}}(U,Yb(U),new Set,Eb(Ab,U.toString(),function(){return new Set}),new Set,cc));bc(U);var D=yb(U);
+if(D.u!==R){I(!D.u,"Failed to set the default implementation to : The default implementation of a wiz.atInterface may only be overridden once, and it was already overridden by "));I(!D.ca,"The defaultImplementationId for  was already read. Make sure to only set it from your base module. It is curren
+") passed to setDefaultImplementationId is not a synchronous Wiz object and cannot be used with a synchronously instantiable interface ("+(D.m+")."))}if(!sc(D,R)){var V=D.J,uc="serviceId  doesn't implement ";if(V){var vc=uc,W=fb,wc;if(wc=V){var xc;if(xc=V&&W){var yc=W.value,zc;zc=V?ob(M(tb(),V.getNa
+(X.M+1)%X.A;X.M=Ac;if(X.O){var Bc=X.L[Ac];Bc.reset(jb,kb,lb);L=Bc}else X.O=Ac==X.A-1,L=X.L[Ac]=new mb}else L=new mb;qb()}}}D.B&&Ra();Pa(D.m,[R],Qa);D.u=R};var Y=function(){E.call(this)};Y.prototype=aa(E.prototype);Y.prototype.constructor=Y;if(ia)ia(Y,E);else for(var Z in E)if(Z!="prototype")if(Objec
+const imageUrl = '     _1\/f0bde41cff69c8b24c3c05ac3654b0bf.jpg';
+      function bgImgLoaded() {
+        if (!globals.headerBgImgLoaded) {
+          globals.headerBgImgLoaded = new Date().getTime();
+        } else {
+          globals.headerBgImgLoaded();
+        }
+      }
+      if (imageUrl) {
+        const img = new Image();
+        img.src = imageUrl;
+        img.onload = bgImgLoaded;
+        globals.headerBgImgExists = true;
+      } else {
+        globals.headerBgImgExists = false;
+      }
