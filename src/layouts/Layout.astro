@@ -5,21 +5,80 @@ import Footer from '../components/Footer.astro';
 
 interface Props {
   title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
 }
 
-const { title = 'סנהדרין לישראל' } = Astro.props;
+const {
+  title = 'סנהדרין לישראל',
+  description = 'מיזם לחידוש הסנהדרין — בית הדין הגדול של שבעים ואחד — לאחד את פסיקת ההלכה ולשקם מוסדות עם ישראל בארצו',
+  image = 'images/39adaf0c6f913e19ba81a7ad56d7af05.jpg',
+  type = 'website',
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const siteOrigin = 'https://SHABLONISHAY.github.io';
+const canonicalURL = new URL(Astro.url.pathname, siteOrigin).href;
+const ogImageURL = `${siteOrigin}${base}${image}`;
+const fullTitle = title === 'סנהדרין לישראל'
+  ? 'סנהדרין לישראל'
+  : `${title} | סנהדרין לישראל`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "סנהדרין לישראל",
+  "url": `${siteOrigin}${base}`,
+  "logo": `${siteOrigin}${base}favicon.png`,
+  "email": "sanhedrin.leisrael@gmail.com",
+  "telephone": "+972-54-398-7273",
+  "sameAs": [
+    "https://www.facebook.com/sanhedrin.leisrael",
+    "https://www.youtube.com/@%D7%A1%D7%A0%D7%94%D7%93%D7%A8%D7%99%D7%9F%20%D7%9C%D7%99%D7%A9%D7%A8%D7%90%D7%9C"
+  ],
+  "description": "מיזם לחידוש הסנהדרין — בית הדין הגדול של שבעים ואחד — לאחד את פסיקת ההלכה בישראל"
+};
 ---
 
 <!doctype html>
 <html lang="he" dir="rtl">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL.replace(/\/?$/, '/')}favicon.png`} />
-    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL.replace(/\/?$/, '/')}favicon.svg`} />
-    <link rel="icon" href={`${import.meta.env.BASE_URL.replace(/\/?$/, '/')}favicon.ico`} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} | סנהדרין לישראל</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href={`${base}favicon.png`} />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="icon" href={`${base}favicon.ico`} />
+
+    <!-- SEO Basics -->
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="סנהדרין לישראל" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:locale" content="he_IL" />
+    <meta property="og:site_name" content="סנהדרין לישראל" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
